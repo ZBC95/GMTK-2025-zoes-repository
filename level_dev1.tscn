@@ -89,9 +89,9 @@ tile_set = SubResource("TileSet_hykmj")
 script = ExtResource("2_gsike")
 
 [node name="Looping_Componenet" parent="." instance=ExtResource("3_nndsm")]
-tl_y = -2
+tl_y = -6
 tr_x = 36
-tr_y = -2
+tr_y = -6
 bl_y = 8
 br_x = 36
 br_y = 8
