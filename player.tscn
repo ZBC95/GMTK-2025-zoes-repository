@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://c6edujmqtcs22" path="res://assets/skid256.png" id="6_n7ghd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(124, 128)
+size = Vector2(58, 113)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
 atlas = ExtResource("2_2hs0m")
@@ -158,6 +158,7 @@ script = ExtResource("1_onrkg")
 SPEED = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -17.5)
 shape = SubResource("RectangleShape2D_hqtel")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
