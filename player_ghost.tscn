@@ -43,6 +43,7 @@ animations = [{
 }]
 
 [node name="PlayerGhost" type="CharacterBody2D"]
+top_level = true
 script = ExtResource("1_h5qa1")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
