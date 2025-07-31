@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var loop = get_node("../Level/Looping_Componenet")
 @onready var loop_position_start: Vector2 = Vector2(loop.bl_x*64, loop.bl_y*64)
 @onready var loop_position_end: Vector2 = Vector2(loop.br_x*64, loop.br_y*64)
+@onready var player_sprite: AnimatedSprite2D = %PlayerSprite
 
 
 var count = 0
@@ -15,12 +16,13 @@ var count = 0
 var movement_data = {}
 
 func _ready():
-	
 	#Ititial position
-	movement_data[0] = global_position
-	
-	print(loop_position_start)
-	print(loop_position_end)
+	movement_data[0] = {
+		"position_x": position.x,
+		"position_y": position.y,
+		"animation": player_sprite.animation,
+		"flip_h": player_sprite.flip_h
+	}
 
 var lap_start_count = 0  # Track when current lap started
 
@@ -50,12 +52,23 @@ func _physics_process(delta: float) -> void:
 	# Get the input direction and handle the movement/deceleration.
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
+		player_sprite.play("run")
 		velocity.x = direction * SPEED
+		if direction == -1:
+			player_sprite.flip_h = true
+		else:
+			player_sprite.flip_h = false
 	else:
+		player_sprite.play("idle")
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
 
 func record_movement():
 	count += 1
-	movement_data[count] = global_position
+	movement_data[count] = {
+		"position_x": position.x,
+		"position_y": position.y,
+		"animation": player_sprite.animation,
+		"flip_h": player_sprite.flip_h
+	}
