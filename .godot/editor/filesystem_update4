@@ -3,3 +3,6 @@ res://game.tscn
 res://player_ghost.tscn
 res://looping_componenet.tscn
 res://level_00.tscn
+res://player.gd
+res://player_ghost.gd
+res://game.gd
