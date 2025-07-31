@@ -4,5 +4,3 @@ res://player_ghost.tscn
 res://looping_componenet.tscn
 res://level_00.tscn
 res://level_dev1.tscn
-res://game.gd
-res://player_ghost.gd
