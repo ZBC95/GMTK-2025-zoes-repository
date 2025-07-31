@@ -56,5 +56,3 @@ sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"run"
 autoplay = "run"
 frame_progress = 0.0851722
-
-[node name="Camera2D" type="Camera2D" parent="."]
