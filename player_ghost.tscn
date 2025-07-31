@@ -1,11 +1,11 @@
 [gd_scene load_steps=24 format=3 uid="uid://c26dkstg4cqe8"]
 
 [ext_resource type="Script" uid="uid://cqoidt5kch35a" path="res://player_ghost.gd" id="1_h5qa1"]
-[ext_resource type="Texture2D" path="res://assets/jump256.png" id="2_1xyui"]
-[ext_resource type="Texture2D" path="res://assets/Idle_256.png" id="3_fmqwa"]
-[ext_resource type="Texture2D" path="res://assets/block256.png" id="4_3v4vy"]
-[ext_resource type="Texture2D" path="res://assets/running_256.png" id="5_6k0mi"]
-[ext_resource type="Texture2D" path="res://assets/skid256.png" id="6_4g4fx"]
+[ext_resource type="Texture2D" uid="uid://co5pwtkndgg0m" path="res://assets/jump256.png" id="2_1xyui"]
+[ext_resource type="Texture2D" uid="uid://clb6dbbn7is7" path="res://assets/Idle_256.png" id="3_fmqwa"]
+[ext_resource type="Texture2D" uid="uid://bh84cl8bvyro" path="res://assets/block256.png" id="4_3v4vy"]
+[ext_resource type="Texture2D" uid="uid://uydsds6mdv32" path="res://assets/running_256.png" id="5_6k0mi"]
+[ext_resource type="Texture2D" uid="uid://c6edujmqtcs22" path="res://assets/skid256.png" id="6_4g4fx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(50, 115)
