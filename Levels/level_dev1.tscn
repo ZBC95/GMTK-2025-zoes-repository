@@ -315,22 +315,13 @@ br_y = 8
 [node name="ExitPipe" parent="." instance=ExtResource("4_k6iak")]
 position = Vector2(1831, 384)
 
-[node name="Button" parent="." instance=ExtResource("4_gsike")]
-position = Vector2(705, 514)
-
 [node name="Button2" parent="." instance=ExtResource("4_gsike")]
 position = Vector2(1059, 514)
 channel = 2
 
-[node name="Light" parent="." instance=ExtResource("5_nndsm")]
-position = Vector2(583, 443)
-
 [node name="Light2" parent="." instance=ExtResource("5_nndsm")]
 position = Vector2(1211, 435)
 channel = 2
-
-[node name="Door" parent="." instance=ExtResource("6_7gwg6")]
-position = Vector2(490, 513)
 
 [node name="Door2" parent="." instance=ExtResource("6_7gwg6")]
 position = Vector2(1296, 509)
