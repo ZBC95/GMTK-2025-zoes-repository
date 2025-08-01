@@ -10,7 +10,7 @@ var is_static: bool = false
 @onready var ghost_sprite: AnimatedSprite2D = %GhostSprite
 
 func _ready() -> void:
-	#SignalBus.player_looped.connect(_on_player_looped)
+	SignalBus.player_looped.connect(_on_player_looped)
 	
 	if movement_data.has(0):
 		var frame_data = movement_data[0]

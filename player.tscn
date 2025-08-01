@@ -171,5 +171,3 @@ animation = &"idle"
 autoplay = "run"
 frame = 1
 frame_progress = 0.734312
-
-[node name="Camera2D" type="Camera2D" parent="."]
