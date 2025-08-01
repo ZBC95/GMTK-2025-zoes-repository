@@ -3,6 +3,8 @@ extends StaticBody2D
 @export var channel: int = 1
 @onready var player = get_node("../../Player")
 @onready var game = get_node("../..")  ###################
+@onready var button_sprite: AnimatedSprite2D = %ButtonSprite
+
 var is_button_on = false
 
 func _ready() -> void:
@@ -26,6 +28,7 @@ func grow_shrink(delta):
 		$Collision.scale.y -= delta*2
 		$CollisionShape2D.scale.y -= delta*2
 		$CollisionShape2D2.scale.y -= delta*2
+		button_sprite.play("on")
 	elif $Collision.scale.y < 1.0 and not is_button_on:
 		#print("growing")
 		#print($Collision.scale.y)
@@ -33,6 +36,7 @@ func grow_shrink(delta):
 		$Collision.scale.y += delta*15
 		$CollisionShape2D.scale.y += delta*15
 		$CollisionShape2D2.scale.y += delta*15
+		button_sprite.play("off")
 		
 		
 
