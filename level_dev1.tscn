@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://0jpia1sq2nxd"]
+[gd_scene load_steps=7 format=4 uid="uid://0jpia1sq2nxd"]
 
 [ext_resource type="Texture2D" uid="uid://b0uginph1g57o" path="res://tilesheet64.png" id="1_v3jva"]
-[ext_resource type="Script" path="res://tile_map_layer.gd" id="2_gsike"]
+[ext_resource type="Script" uid="uid://cm7gfldk3tyxu" path="res://tile_map_layer.gd" id="2_gsike"]
 [ext_resource type="PackedScene" uid="uid://d11r447pm7biw" path="res://looping_componenet.tscn" id="3_nndsm"]
+[ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://button.tscn" id="4_gsike"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_v3jva")
@@ -307,3 +308,6 @@ tr_y = -6
 bl_y = 8
 br_x = 36
 br_y = 8
+
+[node name="Button" parent="." instance=ExtResource("4_gsike")]
+position = Vector2(705, 514)

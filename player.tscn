@@ -7,8 +7,9 @@
 [ext_resource type="Texture2D" uid="uid://uydsds6mdv32" path="res://assets/running_256.png" id="5_b26j0"]
 [ext_resource type="Texture2D" uid="uid://c6edujmqtcs22" path="res://assets/skid256.png" id="6_n7ghd"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
-size = Vector2(58, 113)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2hs0m"]
+radius = 27.0
+height = 113.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
 atlas = ExtResource("4_dw050")
@@ -160,7 +161,7 @@ SPEED = 600.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -17.5)
-shape = SubResource("RectangleShape2D_hqtel")
+shape = SubResource("CapsuleShape2D_2hs0m")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
