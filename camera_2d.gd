@@ -11,7 +11,8 @@ func _ready() -> void:
 
 
 func _physics_process(delta: float) -> void:
-	position_camera()
+	if player != null:
+		position_camera()
 
 
 func _on_player_looped(movement_data):

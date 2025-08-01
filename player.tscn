@@ -1,4 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://pec1kaegnjpg"]
+
+[gd_scene load_steps=25 format=3 uid="uid://pec1kaegnjpg"]
+
 
 [ext_resource type="Script" uid="uid://ct8sp3jamrj4x" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://co5pwtkndgg0m" path="res://assets/jump256.png" id="2_2hs0m"]
@@ -147,6 +149,10 @@ animations = [{
 "speed": 2.0
 }]
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_1jxqw"]
+radius = 27.0
+height = 113.0
+
 [node name="Player" type="CharacterBody2D"]
 top_level = true
 script = ExtResource("1_onrkg")
@@ -163,3 +169,11 @@ scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dw050")
 animation = &"land"
 autoplay = "idle"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -17.5)
+shape = SubResource("CapsuleShape2D_1jxqw")

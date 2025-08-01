@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+signal button_active(channel_sent)
+
 @export var SPEED = 300.0
 @export var JUMP_VELOCITY = 600.0
 @export var gravity = 1000
@@ -23,6 +25,8 @@ var lap_start_count = 0  # Track when current lap started
 var count = 0
 # A Dictionary to store our position
 var movement_data = {}
+var overlaps
+var channel_to_emit: int = 0
 
 @onready var loop = get_node("../Level/Looping_Componenet")
 @onready var loop_position_start: Vector2 = Vector2(loop.bl_x*64, loop.bl_y*64)
@@ -31,6 +35,9 @@ var movement_data = {}
 
 
 func _physics_process(delta: float) -> void:
+	
+	check_overlaps()
+	
 	record_movement()
 	
 	# Add the gravity.
@@ -48,7 +55,7 @@ func _physics_process(delta: float) -> void:
 		current_state = PlayerState.JUMP_UP
 
 	# Handle blocking
-	if Input.is_action_pressed("Down") and is_on_floor():
+	if Input.is_action_pressed("Down") and (is_on_floor() or overlaps.size() != 0):
 		is_blocking = true
 		current_state = PlayerState.BLOCK
 		velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -142,3 +149,16 @@ func record_movement():
 		"animation": player_sprite.animation,
 		"flip_h": player_sprite.flip_h
 	}
+
+func check_overlaps():
+	overlaps = get_node("Area2D").get_overlapping_areas()
+	if overlaps.size() != 0:
+		print("")
+		for ol in overlaps:
+			if ol.get_parent().name.left(6) == "Button" and player_sprite.animation == "block":
+				button_active.emit(ol.get_parent().channel)
+			elif ol.get_parent().name.left(6) == "@Chara" or ol.get_parent().name.left(4) == "Door":
+				die()
+
+func die():
+	queue_free()

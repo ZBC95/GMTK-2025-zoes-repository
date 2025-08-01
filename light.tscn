@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxu8mra5ua1v3"]
+
+[ext_resource type="Script" uid="uid://bs3sapxb084cq" path="res://light.gd" id="1_hdgcg"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_hdgcg"]
+
+[node name="Light" type="MeshInstance2D"]
+scale = Vector2(16, 16)
+mesh = SubResource("QuadMesh_hdgcg")
+script = ExtResource("1_hdgcg")
