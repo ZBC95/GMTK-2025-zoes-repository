@@ -3,6 +3,8 @@ extends MeshInstance2D
 @export var channel: int = 1
 @onready var player = get_node("../../Player")
 @onready var game = get_node("../..")
+@onready var light_sprite: AnimatedSprite2D = %LightSprite
+
 var is_button_on = false
 
 func _ready() -> void:
@@ -14,10 +16,12 @@ func _process(delta: float) -> void:
 		is_button_on = false
 
 		modulate = Color(0, 1, 0, 1)
+		light_sprite.play("red")
 
 	else:
 
 		modulate = Color(1, 0, 0, 1)
+		light_sprite.play("green")
 
 func button_press(channel_sent):
 	if channel_sent == channel:
