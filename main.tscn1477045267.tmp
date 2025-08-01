@@ -2,6 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://c36a581idwf5t" path="res://menu.tscn" id="1_ig7tw"]
 
-[node name="Main" type="Node"]
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 
 [node name="Menu" parent="." instance=ExtResource("1_ig7tw")]
+layout_mode = 1

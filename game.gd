@@ -3,9 +3,10 @@ extends Node2D
 signal ghost_spawned(sent_ghost)
 
 @export var ghost_scene : PackedScene
-@export var next_level : String
+
 @onready var player = get_node("Player")
 @onready var loop = get_node("Level/Looping_Componenet")
+
 
 func _ready():
 	SignalBus.player_looped.connect(_on_player_looped)
@@ -20,6 +21,9 @@ func _ready():
 		"flip_h": false
 	}}
 	add_child(ghost_init)
+
+func _process(delta: float) -> void:
+	$MusicPlayer.volume_linear = Global.music_volume
 
 func _on_player_looped(movement_data):
 	var ghost = ghost_scene.instantiate()
@@ -40,4 +44,8 @@ func _on_player_looped(movement_data):
 
 func _on_level_completed():
 	print("level complete")
-	get_tree().change_scene_to_file(next_level)
+	Global.cur_level += 1
+	if Global.levels.size() > Global.cur_level:
+		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+	else:
+		get_tree().change_scene_to_file("res://main_menu.tscn")
