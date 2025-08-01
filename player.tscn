@@ -1,6 +1,4 @@
-
-[gd_scene load_steps=25 format=3 uid="uid://pec1kaegnjpg"]
-
+[gd_scene load_steps=24 format=3 uid="uid://pec1kaegnjpg"]
 
 [ext_resource type="Script" uid="uid://ct8sp3jamrj4x" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://co5pwtkndgg0m" path="res://assets/jump256.png" id="2_2hs0m"]
@@ -153,7 +151,7 @@ animations = [{
 radius = 27.0
 height = 113.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
 top_level = true
 script = ExtResource("1_onrkg")
 SPEED = 600.0

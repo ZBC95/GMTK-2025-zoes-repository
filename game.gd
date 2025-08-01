@@ -8,6 +8,7 @@ signal ghost_spawned(sent_ghost)
 
 func _ready():
 	SignalBus.player_looped.connect(_on_player_looped)
+	SignalBus.level_completed.connect(_on_level_completed)
 	var ghost_init = ghost_scene.instantiate()
 	
 	ghost_init.is_static = true
@@ -35,3 +36,6 @@ func _on_player_looped(movement_data):
 	add_child(ghost)
 	ghost_spawned.emit(ghost)
 	add_child(ghost2)
+
+func _on_level_completed():
+	print("level complete")

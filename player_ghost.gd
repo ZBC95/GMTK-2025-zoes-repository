@@ -55,12 +55,12 @@ func update_collision_layers():
 
 func check_overlaps():
 	overlaps = get_node("Area2D").get_overlapping_areas()
-	print(name)
-	print(overlaps)
+	#print(name)
+	#print(overlaps)
 	if overlaps.size() != 0:
 		for ol in overlaps:
-			print(ol.get_parent().name.left(6))
-			print(ghost_sprite.animation)
+			#print(ol.get_parent().name.left(6))
+			#print(ghost_sprite.animation)
 			if ol.get_parent().name.left(6) == "Button" and ghost_sprite.animation == "block":
-				print("signal should emit")
+				#print("signal should emit")
 				button_active.emit(ol.get_parent().channel)

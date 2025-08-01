@@ -153,7 +153,7 @@ func record_movement():
 func check_overlaps():
 	overlaps = get_node("Area2D").get_overlapping_areas()
 	if overlaps.size() != 0:
-		print("")
+		#print("")
 		for ol in overlaps:
 			if ol.get_parent().name.left(6) == "Button" and player_sprite.animation == "block":
 				button_active.emit(ol.get_parent().channel)
