@@ -1,5 +1,7 @@
 extends Node2D
 
+signal ghost_spawned(sent_ghost)
+
 @export var ghost_scene : PackedScene
 @onready var player = get_node("Player")
 @onready var loop = get_node("Level/Looping_Componenet")
@@ -7,6 +9,7 @@ extends Node2D
 func _ready():
 	SignalBus.player_looped.connect(_on_player_looped)
 	var ghost_init = ghost_scene.instantiate()
+	
 	ghost_init.is_static = true
 	ghost_init.movement_data = {0: {
 		"position_x": player.position.x + (loop.br_x*64 - loop.bl_x*64),
@@ -30,4 +33,5 @@ func _on_player_looped(movement_data):
 	#print(ghost.movement_data)
 	#print(ghost2.movement_data)
 	add_child(ghost)
+	ghost_spawned.emit(ghost)
 	add_child(ghost2)
