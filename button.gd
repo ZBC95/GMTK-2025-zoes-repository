@@ -25,9 +25,9 @@ func grow_shrink(delta):
 		#print("shrinking")
 		#print($Collision.scale.y)
 		#print(is_button_on)
-		$Collision.scale.y -= delta*2
-		$CollisionShape2D.scale.y -= delta*2
-		$CollisionShape2D2.scale.y -= delta*2
+		$Collision.scale.y -= delta*1.5
+		$CollisionShape2D.scale.y -= delta*1.5
+		$CollisionShape2D2.scale.y -= delta*1.5
 		button_sprite.play("on")
 	elif $Collision.scale.y < 1.0 and not is_button_on:
 		#print("growing")
