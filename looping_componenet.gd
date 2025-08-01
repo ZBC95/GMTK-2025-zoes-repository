@@ -42,8 +42,8 @@ func _ready() -> void:
 		temp.position.y -= (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*i
 		add_sibling.call_deferred(temp)
 		
-		print(temp.name) 
-		print(temp.i)
-		print(temp.position)
-		print("\n")
-	print(get_parent().get_children())
+		#print(temp.name) 
+		#print(temp.i)
+		#print(temp.position)
+		#print("\n")
+	#print(get_parent().get_children())

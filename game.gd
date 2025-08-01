@@ -27,7 +27,7 @@ func _on_player_looped(movement_data):
 		"flip_h": false
 	}}
 	ghost2.is_static = true
-	print(ghost.movement_data)
-	print(ghost2.movement_data)
+	#print(ghost.movement_data)
+	#print(ghost2.movement_data)
 	add_child(ghost)
 	add_child(ghost2)
