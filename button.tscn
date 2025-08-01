@@ -20,7 +20,7 @@ top_level = true
 script = ExtResource("1_r04n3")
 
 [node name="PressedArea" type="Area2D" parent="."]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 0
 
 [node name="Area" type="CollisionShape2D" parent="PressedArea"]
