@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c26dkstg4cqe8" path="res://player_ghost.tscn" id="2_7jktm"]
 [ext_resource type="PackedScene" uid="uid://pec1kaegnjpg" path="res://Level_Making/player.tscn" id="2_fc0e3"]
 [ext_resource type="PackedScene" uid="uid://bry0e14a7otyd" path="res://camera_2d.tscn" id="3_7jktm"]
-[ext_resource type="PackedScene" uid="uid://0jpia1sq2nxd" path="res://level_dev1.tscn" id="4_fc0e3"]
+[ext_resource type="PackedScene" uid="uid://0jpia1sq2nxd" path="res://Levels/level_dev1.tscn" id="4_fc0e3"]
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="6_ryrav"]
 
 [node name="Game" type="Node2D"]
