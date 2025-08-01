@@ -10,6 +10,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(50, 115)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
+atlas = ExtResource("4_3v4vy")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pylmc"]
+atlas = ExtResource("4_3v4vy")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
+atlas = ExtResource("4_3v4vy")
+region = Rect2(512, 0, 256, 256)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
 atlas = ExtResource("2_1xyui")
 region = Rect2(768, 0, 256, 256)
@@ -38,18 +50,6 @@ region = Rect2(768, 0, 256, 256)
 atlas = ExtResource("2_1xyui")
 region = Rect2(1024, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
-atlas = ExtResource("4_3v4vy")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pylmc"]
-atlas = ExtResource("4_3v4vy")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
-atlas = ExtResource("4_3v4vy")
-region = Rect2(512, 0, 256, 256)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tmop"]
 atlas = ExtResource("5_6k0mi")
 region = Rect2(0, 0, 256, 256)
@@ -72,6 +72,20 @@ region = Rect2(0, 0, 256, 256)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_1q2qo"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q13i1")
+}, {
+"duration": 3.5,
+"texture": SubResource("AtlasTexture_pylmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbfsw")
+}],
+"loop": false,
+"name": &"block",
+"speed": 3.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_nvl01")
@@ -115,20 +129,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_q13i1")
-}, {
-"duration": 3.5,
-"texture": SubResource("AtlasTexture_pylmc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbfsw")
-}],
-"loop": false,
-"name": &"new_animation",
-"speed": 3.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_5tmop")
 }, {
 "duration": 1.0,
@@ -168,6 +168,6 @@ modulate = Color(0, 0.341176, 0.568627, 0.588235)
 position = Vector2(0, -23)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_1q2qo")
-animation = &"idle"
+animation = &"block"
 autoplay = "run"
 metadata/_edit_lock_ = true

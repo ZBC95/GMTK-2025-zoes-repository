@@ -10,6 +10,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
 size = Vector2(58, 113)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
+atlas = ExtResource("4_dw050")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pylmc"]
+atlas = ExtResource("4_dw050")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
+atlas = ExtResource("4_dw050")
+region = Rect2(512, 0, 256, 256)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_nvl01"]
 atlas = ExtResource("2_2hs0m")
 region = Rect2(768, 0, 256, 256)
@@ -38,18 +50,6 @@ region = Rect2(768, 0, 256, 256)
 atlas = ExtResource("2_2hs0m")
 region = Rect2(1024, 0, 256, 256)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_q13i1"]
-atlas = ExtResource("4_dw050")
-region = Rect2(0, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pylmc"]
-atlas = ExtResource("4_dw050")
-region = Rect2(256, 0, 256, 256)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pbfsw"]
-atlas = ExtResource("4_dw050")
-region = Rect2(512, 0, 256, 256)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_5tmop"]
 atlas = ExtResource("5_b26j0")
 region = Rect2(0, 0, 256, 256)
@@ -74,6 +74,20 @@ region = Rect2(0, 0, 256, 256)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_q13i1")
+}, {
+"duration": 3.5,
+"texture": SubResource("AtlasTexture_pylmc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pbfsw")
+}],
+"loop": true,
+"name": &"block",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 3.0,
 "texture": SubResource("AtlasTexture_nvl01")
 }],
 "loop": true,
@@ -109,23 +123,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_op7ga")
 }],
-"loop": true,
-"name": &"land",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q13i1")
-}, {
-"duration": 3.5,
-"texture": SubResource("AtlasTexture_pylmc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pbfsw")
-}],
 "loop": false,
-"name": &"new_animation",
-"speed": 3.0
+"name": &"land",
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -148,9 +148,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jm5j8")
 }],
-"loop": true,
+"loop": false,
 "name": &"skid",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Player" type="CharacterBody2D"]
@@ -167,7 +167,5 @@ unique_name_in_owner = true
 position = Vector2(0, -23)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dw050")
-animation = &"idle"
-autoplay = "run"
-frame = 1
-frame_progress = 0.734312
+animation = &"land"
+autoplay = "idle"
