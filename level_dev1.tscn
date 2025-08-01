@@ -1,11 +1,12 @@
-[gd_scene load_steps=9 format=4 uid="uid://0jpia1sq2nxd"]
+[gd_scene load_steps=10 format=4 uid="uid://0jpia1sq2nxd"]
 
 [ext_resource type="Texture2D" uid="uid://b0uginph1g57o" path="res://tilesheet64.png" id="1_v3jva"]
 [ext_resource type="Script" uid="uid://cm7gfldk3tyxu" path="res://tile_map_layer.gd" id="2_gsike"]
 [ext_resource type="PackedScene" uid="uid://d11r447pm7biw" path="res://looping_componenet.tscn" id="3_nndsm"]
-[ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://button.tscn" id="4_gsike"]
-[ext_resource type="PackedScene" path="res://light.tscn" id="5_nndsm"]
-[ext_resource type="PackedScene" path="res://door.tscn" id="6_7gwg6"]
+[ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="4_gsike"]
+[ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="4_k6iak"]
+[ext_resource type="PackedScene" uid="uid://dxu8mra5ua1v3" path="res://Level_Making/light.tscn" id="5_nndsm"]
+[ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="6_7gwg6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_v3jva")
@@ -310,6 +311,9 @@ tr_y = -6
 bl_y = 8
 br_x = 36
 br_y = 8
+
+[node name="ExitPipe" parent="." instance=ExtResource("4_k6iak")]
+position = Vector2(1831, 384)
 
 [node name="Button" parent="." instance=ExtResource("4_gsike")]
 position = Vector2(705, 514)
