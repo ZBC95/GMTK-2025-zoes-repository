@@ -15,7 +15,7 @@ next_level = "res://Levels/game_level_dev_02.tscn"
 [node name="Camera2D" parent="." instance=ExtResource("3_tkpi4")]
 
 [node name="Player" parent="." instance=ExtResource("4_5rggg")]
-position = Vector2(240, 390)
+position = Vector2(96, 586)
 JUMP_VELOCITY = 1100.0
 gravity = 1500
 

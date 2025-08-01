@@ -19,7 +19,7 @@ extends Node2D
 func _ready() -> void:
 	var player = get_node("../../Player")
 	var level = get_node("../../Level")
-	var tilemap = get_node("../Single_Map")
+	var tilemap = get_node("../Platforms")
 	var temp = tilemap
 	
 	get_node("top_left").position = Vector2(tl_x*64, tl_y*64)
