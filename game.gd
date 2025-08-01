@@ -21,6 +21,10 @@ func _ready():
 	}}
 	add_child(ghost_init)
 
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("Restart"):
+		get_tree().change_scene_to_file("C:/Users/Zoe/Documents/Godot/GMTK-2025-zoes-repository/Levels/" + get_tree().current_scene.name + ".tscn")
+
 func _on_player_looped(movement_data):
 	var ghost = ghost_scene.instantiate()
 	ghost.movement_data = movement_data
