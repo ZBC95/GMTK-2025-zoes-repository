@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=4 uid="uid://dqaxnt0kvlcc"]
+[gd_scene load_steps=7 format=4 uid="uid://dqaxnt0kvlcc"]
 
 [ext_resource type="Texture2D" uid="uid://daccndcyagt34" path="res://icon.svg" id="1_p1oqu"]
 [ext_resource type="PackedScene" uid="uid://d11r447pm7biw" path="res://looping_componenet.tscn" id="2_6no7u"]
 [ext_resource type="Script" uid="uid://cm7gfldk3tyxu" path="res://tile_map_layer.gd" id="2_hykmj"]
+[ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="4_mav1t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_p1oqu")
@@ -95,3 +96,6 @@ tr_y = -2
 bl_y = 8
 br_x = 35
 br_y = 8
+
+[node name="ExitPipe" parent="." instance=ExtResource("4_mav1t")]
+position = Vector2(400, 65)

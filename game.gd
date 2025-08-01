@@ -3,6 +3,7 @@ extends Node2D
 signal ghost_spawned(sent_ghost)
 
 @export var ghost_scene : PackedScene
+@export var next_level : String
 @onready var player = get_node("Player")
 @onready var loop = get_node("Level/Looping_Componenet")
 
@@ -39,3 +40,4 @@ func _on_player_looped(movement_data):
 
 func _on_level_completed():
 	print("level complete")
+	get_tree().change_scene_to_file(next_level)
