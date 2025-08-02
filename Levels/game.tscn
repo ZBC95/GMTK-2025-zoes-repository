@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://8pymn4gk7tou"]
+[gd_scene load_steps=10 format=3 uid="uid://8pymn4gk7tou"]
 
 [ext_resource type="Script" uid="uid://bi6xqguwa44s" path="res://game.gd" id="1_feb5d"]
 [ext_resource type="PackedScene" uid="uid://c26dkstg4cqe8" path="res://player_ghost.tscn" id="2_7jktm"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://0jpia1sq2nxd" path="res://Levels/level_dev1.tscn" id="4_fc0e3"]
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="6_ryrav"]
 [ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="7_ev4ff"]
+[ext_resource type="AudioStream" uid="uid://d10krbieamqy5" path="res://assets/sfx/pause.wav" id="8_xfsjo"]
+[ext_resource type="AudioStream" uid="uid://ub220pwldlci" path="res://assets/sfx/block.wav" id="9_qe8hq"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_feb5d")
@@ -23,7 +25,18 @@ JUMP_VELOCITY = 1100.0
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_ryrav")
 autoplay = true
+bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="pause_component" parent="CanvasLayer" instance=ExtResource("7_ev4ff")]
+
+[node name="PauseSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("8_xfsjo")
+bus = &"SFX"
+
+[node name="NiceSound" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource("9_qe8hq")
+bus = &"SFX"
