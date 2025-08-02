@@ -11,9 +11,12 @@ func _ready() -> void:
 	sfx_slider.value = Global.sfx_volume
 
 func _on_back_pressed() -> void:
-	menu.visible = true
-	level_select.visible = false
-	settings.visible = false
+	if get_node("..").name == "main_menu":
+		menu.visible = true
+		level_select.visible = false
+		settings.visible = false
+	else:
+		pass
 
 func _process(delta: float) -> void:
 	$VBoxContainer/music_container/VBoxContainer/music_value.text = str(music_slider.value).pad_decimals(2)

@@ -16,7 +16,6 @@ ghost_scene = ExtResource("2_7jktm")
 [node name="Player" parent="." instance=ExtResource("2_fc0e3")]
 position = Vector2(240, 390)
 JUMP_VELOCITY = 1100.0
-gravity = 1500
 
 [node name="Level" parent="." instance=ExtResource("4_fc0e3")]
 
