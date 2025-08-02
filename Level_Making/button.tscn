@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c8taoh511l4oa"]
+[gd_scene load_steps=10 format=3 uid="uid://c8taoh511l4oa"]
 
 [ext_resource type="Script" uid="uid://d08otaixme73l" path="res://button.gd" id="1_r04n3"]
 [ext_resource type="Texture2D" uid="uid://8apoyh8mraef" path="res://assets/button64.png" id="2_f32dm"]
@@ -6,11 +6,6 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vvm8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04n3"]
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0vvm8"]
-
-[sub_resource type="QuadMesh" id="QuadMesh_r04n3"]
-material = SubResource("StandardMaterial3D_0vvm8")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4tde"]
 
@@ -58,11 +53,9 @@ shape = SubResource("RectangleShape2D_0vvm8")
 [node name="Collision" type="CollisionShape2D" parent="."]
 scale = Vector2(6.4, 1)
 shape = SubResource("RectangleShape2D_r04n3")
-debug_color = Color(0.0313726, 0.65098, 0, 1)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Collision"]
 scale = Vector2(20, 20)
-mesh = SubResource("QuadMesh_r04n3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-67, 3)

@@ -1,45 +1,16 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxu8mra5ua1v3"]
+[gd_scene load_steps=3 format=3 uid="uid://dxu8mra5ua1v3"]
 
 [ext_resource type="Script" uid="uid://bs3sapxb084cq" path="res://light.gd" id="1_hdgcg"]
 [ext_resource type="Texture2D" uid="uid://bl8k7ic07hvf" path="res://assets/light64.png" id="2_1s7ak"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_vw4ib"]
-atlas = ExtResource("2_1s7ak")
-region = Rect2(64, 0, 64, 128)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uokk4"]
-atlas = ExtResource("2_1s7ak")
-region = Rect2(0, 0, 64, 128)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_yvg51"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_vw4ib")
-}],
-"loop": false,
-"name": &"green",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uokk4")
-}],
-"loop": false,
-"name": &"red",
-"speed": 5.0
-}]
-
 [node name="Light" type="MeshInstance2D"]
-scale = Vector2(16, 16)
 script = ExtResource("1_hdgcg")
 metadata/_edit_vertical_guides_ = [-32.0, 32.0]
 metadata/_edit_horizontal_guides_ = [-32.0, 32.0, -64.0, 64.0]
 
-[node name="LightSprite" type="AnimatedSprite2D" parent="."]
-unique_name_in_owner = true
-position = Vector2(1.15484e-07, -1.49012e-08)
-scale = Vector2(0.0625, 0.0625)
-sprite_frames = SubResource("SpriteFrames_yvg51")
-animation = &"green"
-autoplay = "red"
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1s7ak")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.537255)
+texture = ExtResource("2_1s7ak")
