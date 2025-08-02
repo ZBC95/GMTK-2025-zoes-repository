@@ -11,13 +11,14 @@ config_version=5
 [application]
 
 config/name="GMTK-Jam25"
-run/main_scene="uid://bgvne4v473x6h"
+run/main_scene="uid://b4bd8ihgj2chg"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
 SignalBus="*res://signal_bus.gd"
+Global="*res://global.gd"
 
 [global_group]
 
