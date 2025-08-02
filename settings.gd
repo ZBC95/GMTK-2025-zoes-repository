@@ -3,6 +3,7 @@ extends Control
 @onready var menu = get_node("../menu")
 @onready var level_select = get_node("../level_select")
 @onready var settings = get_node("../settings")
+@onready var pause_menu = get_node("../pause_menu")
 @onready var music_slider = $VBoxContainer/music_container/VBoxContainer/music_slider
 @onready var sfx_slider = $VBoxContainer/sfx_container/VBoxContainer/sfx_slider
 
@@ -16,7 +17,8 @@ func _on_back_pressed() -> void:
 		level_select.visible = false
 		settings.visible = false
 	else:
-		pass
+		pause_menu.visible = true
+		settings.visible = false
 
 func _process(delta: float) -> void:
 	$VBoxContainer/music_container/VBoxContainer/music_value.text = str(music_slider.value).pad_decimals(2)
