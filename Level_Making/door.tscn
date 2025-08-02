@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bjrh4jb45c4v" path="res://assets/door64.png" id="2_0rabo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
-size = Vector2(12, 192)
+size = Vector2(33, 192)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0rabo"]
 atlas = ExtResource("2_0rabo")
@@ -66,12 +66,12 @@ top_level = true
 script = ExtResource("1_ba8gm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -96)
+position = Vector2(1.5, -96)
 shape = SubResource("RectangleShape2D_v6xrn")
 
 [node name="DoorSprite" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(-40, -96)
 sprite_frames = SubResource("SpriteFrames_ccclb")
-animation = &"closed"
+animation = &"clopen"
 autoplay = "closed"

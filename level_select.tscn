@@ -133,4 +133,5 @@ text = "Back"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_01" to="." method="_on_level_01_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_02" to="." method="_on_level_02_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_03" to="." method="_on_level_03_pressed"]
 [connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
