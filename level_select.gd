@@ -15,9 +15,12 @@ func _ready() -> void:
 					z.visible = false
 
 func _on_back_pressed() -> void:
-	menu.visible = true
-	level_select.visible = false
-	settings.visible = false
+	if get_node("..").name == "main_menu":
+		menu.visible = true
+		level_select.visible = false
+		settings.visible = false
+	else:
+		pass
 
 
 func _on_level_01_pressed() -> void:
