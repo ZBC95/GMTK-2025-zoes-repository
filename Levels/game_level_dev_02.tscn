@@ -1,0 +1,27 @@
+[gd_scene load_steps=8 format=3 uid="uid://d38h6ptvkdcb2"]
+
+[ext_resource type="Script" uid="uid://bi6xqguwa44s" path="res://game.gd" id="1_7uw5q"]
+[ext_resource type="PackedScene" uid="uid://c26dkstg4cqe8" path="res://player_ghost.tscn" id="2_58whc"]
+[ext_resource type="PackedScene" uid="uid://bry0e14a7otyd" path="res://camera_2d.tscn" id="3_hhcrq"]
+[ext_resource type="PackedScene" uid="uid://pec1kaegnjpg" path="res://Level_Making/player.tscn" id="4_jlypn"]
+[ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="6_1pdor"]
+[ext_resource type="PackedScene" uid="uid://bxfivi5el4656" path="res://Levels/level_dev2.tscn" id="6_7uw5q"]
+[ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="7_58whc"]
+
+[node name="Game" type="Node2D"]
+script = ExtResource("1_7uw5q")
+ghost_scene = ExtResource("2_58whc")
+
+[node name="Camera2D" parent="." instance=ExtResource("3_hhcrq")]
+
+[node name="Player" parent="." instance=ExtResource("4_jlypn")]
+position = Vector2(280, 530)
+JUMP_VELOCITY = 1100.0
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_1pdor")
+autoplay = true
+
+[node name="Level" parent="." instance=ExtResource("6_7uw5q")]
+
+[node name="pause_component" parent="." instance=ExtResource("7_58whc")]

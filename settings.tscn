@@ -1,0 +1,89 @@
+[gd_scene load_steps=2 format=3 uid="uid://dmr0jtbdfgo3c"]
+
+[ext_resource type="Script" uid="uid://b2h20rsmpjjny" path="res://settings.gd" id="1_x2hje"]
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_x2hje")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -362.5
+offset_top = -179.0
+offset_right = 362.5
+offset_bottom = 179.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="music_container" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/music_container"]
+layout_mode = 2
+
+[node name="music_slider" type="HSlider" parent="VBoxContainer/music_container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 25)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="music_value" type="Label" parent="VBoxContainer/music_container/VBoxContainer"]
+layout_mode = 2
+text = "text"
+horizontal_alignment = 1
+
+[node name="music_submit" type="Button" parent="VBoxContainer/music_container"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Set Music Volume"
+
+[node name="sfx_container" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/sfx_container"]
+layout_mode = 2
+
+[node name="sfx_slider" type="HSlider" parent="VBoxContainer/sfx_container/VBoxContainer"]
+custom_minimum_size = Vector2(500, 25)
+layout_mode = 2
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="sfx_value" type="Label" parent="VBoxContainer/sfx_container/VBoxContainer"]
+layout_mode = 2
+text = "text"
+horizontal_alignment = 1
+
+[node name="sfx_submit" type="Button" parent="VBoxContainer/sfx_container"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+text = "Set SFX Volume"
+
+[node name="back" type="Button" parent="VBoxContainer"]
+custom_minimum_size = Vector2(200, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Back"
+
+[connection signal="pressed" from="VBoxContainer/music_container/music_submit" to="." method="_on_music_submit_pressed"]
+[connection signal="pressed" from="VBoxContainer/sfx_container/sfx_submit" to="." method="_on_sfx_submit_pressed"]
+[connection signal="pressed" from="VBoxContainer/back" to="." method="_on_back_pressed"]

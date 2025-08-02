@@ -1,0 +1,75 @@
+[gd_scene load_steps=11 format=3 uid="uid://p4urqew4lqu2"]
+
+[ext_resource type="Script" uid="uid://bacrdjkslmv3n" path="res://exit_pipe.gd" id="1_1yesm"]
+[ext_resource type="Texture2D" uid="uid://tur4exeoqna0" path="res://assets/pipe_sheet64.png" id="2_oqq8d"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3mtp"]
+atlas = ExtResource("2_oqq8d")
+region = Rect2(768, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8bbo"]
+atlas = ExtResource("2_oqq8d")
+region = Rect2(128, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12rxk"]
+atlas = ExtResource("2_oqq8d")
+region = Rect2(256, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuodc"]
+atlas = ExtResource("2_oqq8d")
+region = Rect2(384, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12f1y"]
+atlas = ExtResource("2_oqq8d")
+region = Rect2(512, 0, 128, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lhip"]
+atlas = ExtResource("2_oqq8d")
+region = Rect2(640, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bbve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3mtp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8bbo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12rxk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuodc")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_12f1y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0lhip")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3mtp")
+}],
+"loop": false,
+"name": &"suck",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_eig6q"]
+size = Vector2(20, 256)
+
+[node name="ExitPipe" type="Area2D"]
+script = ExtResource("1_1yesm")
+metadata/_edit_horizontal_guides_ = [129.0]
+
+[node name="ExitPipeSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+sprite_frames = SubResource("SpriteFrames_5bbve")
+animation = &"suck"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_eig6q")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="ExitPipeSprite" to="." method="_on_exit_pipe_sprite_animation_finished"]

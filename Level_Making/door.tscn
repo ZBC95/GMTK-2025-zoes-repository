@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://b3du30tia0mtw"]
+
+[ext_resource type="Script" uid="uid://cb4ixt3ggarkp" path="res://door.gd" id="1_ba8gm"]
+[ext_resource type="Texture2D" uid="uid://bjrh4jb45c4v" path="res://assets/door64.png" id="2_0rabo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v6xrn"]
+size = Vector2(33, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0rabo"]
+atlas = ExtResource("2_0rabo")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jn2wj"]
+atlas = ExtResource("2_0rabo")
+region = Rect2(128, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d4xvk"]
+atlas = ExtResource("2_0rabo")
+region = Rect2(256, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bckog"]
+atlas = ExtResource("2_0rabo")
+region = Rect2(384, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r86xs"]
+atlas = ExtResource("2_0rabo")
+region = Rect2(512, 0, 128, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i7ie6"]
+atlas = ExtResource("2_0rabo")
+region = Rect2(0, 0, 128, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ccclb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0rabo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jn2wj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d4xvk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bckog")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r86xs")
+}],
+"loop": false,
+"name": &"clopen",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i7ie6")
+}],
+"loop": false,
+"name": &"closed",
+"speed": 5.0
+}]
+
+[node name="Door" type="StaticBody2D"]
+top_level = true
+script = ExtResource("1_ba8gm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, -96)
+shape = SubResource("RectangleShape2D_v6xrn")
+
+[node name="DoorSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(-40, -96)
+sprite_frames = SubResource("SpriteFrames_ccclb")
+animation = &"clopen"
+autoplay = "closed"

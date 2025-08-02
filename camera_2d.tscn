@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bry0e14a7otyd"]
+
+[ext_resource type="Script" uid="uid://cah817d20uhe3" path="res://camera_2d.gd" id="1_u0e42"]
+[ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="2_jtxfu"]
+
+[node name="Camera2D" type="Camera2D"]
+script = ExtResource("1_u0e42")
+
+[node name="pause_component" parent="." instance=ExtResource("2_jtxfu")]

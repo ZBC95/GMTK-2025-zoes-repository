@@ -19,7 +19,8 @@ extends Node2D
 func _ready() -> void:
 	var player = get_node("../../Player")
 	var level = get_node("../../Level")
-	var tilemap = get_node("../Single_Map")
+	var tilemap = get_node("../Platforms")
+	var tilemap_bg = get_node("../Background")
 	var temp = tilemap
 	
 	get_node("top_left").position = Vector2(tl_x*64, tl_y*64)
@@ -31,19 +32,33 @@ func _ready() -> void:
 		temp = tilemap.duplicate()
 		temp.name = tilemap.name + str(i) + "f"
 		temp.i = i
-		temp.position.x += (get_node("bottom_right").position.x - get_node("bottom_left").position.x)*i
-		temp.position.y += (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*i
+		temp.position.x += (get_node("bottom_right").position.x - get_node("bottom_left").position.x)*(i+1)
+		temp.position.y += (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*(i+1)
 		add_sibling.call_deferred(temp)
 		
 		temp = tilemap.duplicate()
 		temp.name = tilemap.name + str(i) + "b"
 		temp.i = i
-		temp.position.x -= (get_node("bottom_right").position.x - get_node("bottom_left").position.x)*i
-		temp.position.y -= (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*i
+		temp.position.x -= (get_node("bottom_right").position.x - get_node("bottom_left").position.x)*(i+1)
+		temp.position.y -= (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*(i+1)
 		add_sibling.call_deferred(temp)
 		
-		print(temp.name) 
-		print(temp.i)
-		print(temp.position)
-		print("\n")
-	print(get_parent().get_children())
+		temp = tilemap_bg.duplicate()
+		temp.name = tilemap_bg.name + str(i) + "f"
+		temp.i = i
+		temp.position.x += (get_node("bottom_right").position.x - get_node("bottom_left").position.x)*(i+1)
+		temp.position.y += (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*(i+1)
+		add_sibling.call_deferred(temp)
+		
+		temp = tilemap_bg.duplicate()
+		temp.name = tilemap_bg.name + str(i) + "b"
+		temp.i = i
+		temp.position.x -= (get_node("bottom_right").position.x - get_node("bottom_left").position.x)*(i+1)
+		temp.position.y -= (get_node("bottom_right").position.y - get_node("bottom_left").position.y)*(i+1)
+		add_sibling.call_deferred(temp)
+		
+		#print(temp.name) 
+		#print(temp.i)
+		#print(temp.position)
+		#print("\n")
+	#print(get_parent().get_children())

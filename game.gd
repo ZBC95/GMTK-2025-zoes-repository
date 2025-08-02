@@ -1,11 +1,81 @@
 extends Node2D
 
+signal ghost_spawned(sent_ghost)
+
 @export var ghost_scene : PackedScene
+
+@onready var player = get_node("Player")
+@onready var loop = get_node("Level/Looping_Componenet")
+@onready var level = get_node("Level")
+@onready var pause_comp = get_node("Camera2D/pause_component")
+
+
+var is_paused = false
+var pause_vol = 1.0
+var pause_pitch = 1.0
 
 func _ready():
 	SignalBus.player_looped.connect(_on_player_looped)
+	SignalBus.level_completed.connect(_on_level_completed)
+	var ghost_init = ghost_scene.instantiate()
+	
+	ghost_init.is_static = true
+	ghost_init.movement_data = {0: {
+		"position_x": player.position.x + (loop.br_x*64 - loop.bl_x*64),
+		"position_y": player.position.y + (loop.br_y*64 - loop.bl_y*64),
+		"animation": "idle",
+		"flip_h": false
+	}}
+	add_child(ghost_init)
+
+func _process(delta: float) -> void:
+	$MusicPlayer.volume_linear = Global.music_volume*pause_vol
+	$MusicPlayer.pitch_scale = pause_pitch
+	if Input.is_action_just_pressed("Restart"):
+		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+	if Input.is_action_just_pressed("Pause"):
+		pause()
+	
 
 func _on_player_looped(movement_data):
 	var ghost = ghost_scene.instantiate()
 	ghost.movement_data = movement_data
+	var ghost2 = ghost_scene.instantiate()
+	ghost2.movement_data = {0: {
+		"position_x": player.position.x,
+		"position_y": player.position.y,
+		"animation": "idle",
+		"flip_h": false
+	}}
+	ghost2.is_static = true
+	#print(ghost.movement_data)
+	#print(ghost2.movement_data)
 	add_child(ghost)
+	ghost_spawned.emit(ghost)
+	add_child(ghost2)
+
+func _on_level_completed():
+	print("level complete")
+	Global.cur_level += 1
+	if Global.levels.size() > Global.cur_level:
+		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+	else:
+		get_tree().change_scene_to_file("res://main_menu.tscn")
+
+func pause():
+	if not is_paused:
+		pause_comp.visible = true
+		level.process_mode = PROCESS_MODE_DISABLED
+		player.process_mode = PROCESS_MODE_DISABLED
+		pause_vol = 0.25
+		pause_pitch = 0.5
+		is_paused != is_paused
+		#pause_comp.positon.x = $Camera2D.position.x
+		#pause_comp.positon.y = $Camera2D.position.y
+	else:
+		pause_comp.visible = false
+		level.PROCESS_MODE_INHERIT
+		player.PROCESS_MODE_INHERIT
+		pause_vol = 1.0
+		pause_pitch = 1.0
+		is_paused != is_paused
