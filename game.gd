@@ -24,6 +24,8 @@ func _ready():
 
 func _process(delta: float) -> void:
 	$MusicPlayer.volume_linear = Global.music_volume
+	if Input.is_action_just_pressed("Restart"):
+		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
 
 func _on_player_looped(movement_data):
 	var ghost = ghost_scene.instantiate()

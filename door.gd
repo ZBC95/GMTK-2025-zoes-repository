@@ -6,7 +6,7 @@ extends StaticBody2D
 @onready var door_sprite: AnimatedSprite2D = %DoorSprite
 
 var is_button_on = false
-var is_door_open = false  # New latch variable
+var is_door_open = true  # New latch variable
 
 func _ready() -> void:
 	player.button_active.connect(button_press)
@@ -16,16 +16,23 @@ func _ready() -> void:
 	set_collision_mask_value(1, true)
 
 func _process(_delta: float) -> void:
-	if is_button_on and not is_door_open:
-		door_sprite.play("clopen")
+	print(is_button_on)
+	print(is_door_open)
+	if is_button_on:
+		
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)
-		is_door_open = true
-	elif not is_button_on and is_door_open:
-		door_sprite.play_backwards("clopen")
+		is_button_on = false
+		if is_door_open:
+			door_sprite.play("clopen")
+			is_door_open = not is_door_open
+	elif not is_button_on:
+		
 		set_collision_layer_value(1, true)
 		set_collision_mask_value(1, true)
-		is_door_open = false
+		if not is_door_open:
+			door_sprite.play_backwards("clopen")
+			is_door_open = not is_door_open
 
 func button_press(channel_sent):
 	if channel_sent == channel:
