@@ -20,6 +20,10 @@ config/icon="res://icon.svg"
 SignalBus="*res://signal_bus.gd"
 Global="*res://global.gd"
 
+[display]
+
+window/size/mode=3
+
 [global_group]
 
 player="das u"

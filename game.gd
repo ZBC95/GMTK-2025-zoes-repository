@@ -29,7 +29,6 @@ func _ready():
 	add_child(ghost_init)
 
 func _process(delta: float) -> void:
-	print("game processing")
 	$MusicPlayer.volume_linear = Global.music_volume*pause_vol
 	$MusicPlayer.pitch_scale = pause_pitch
 	if Input.is_action_just_pressed("Restart"):

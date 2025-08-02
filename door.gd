@@ -16,8 +16,6 @@ func _ready() -> void:
 	set_collision_mask_value(1, true)
 
 func _process(_delta: float) -> void:
-	print(is_button_on)
-	print(is_door_open)
 	if is_button_on:
 		
 		set_collision_layer_value(1, false)
