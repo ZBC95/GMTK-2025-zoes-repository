@@ -32,7 +32,7 @@ func _process(delta: float) -> void:
 	$MusicPlayer.volume_linear = Global.music_volume*pause_vol
 	$MusicPlayer.pitch_scale = pause_pitch
 	if Input.is_action_just_pressed("Restart"):
-		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+		Global.load_cur()
 	if Input.is_action_just_pressed("Pause"):
 		pause()
 	
@@ -58,7 +58,7 @@ func _on_level_completed():
 	print("level complete")
 	Global.cur_level += 1
 	if Global.levels.size() > Global.cur_level:
-		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+		Global.load_cur()
 	else:
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 
