@@ -13,30 +13,32 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	
-	grow_shrink(delta)
+	#grow_shrink(delta)
+	
+	#---------------------------------
+	#replaces grow_shrink()
+	if is_button_on:
+		button_sprite.play("on")
+	elif not is_button_on:
+		button_sprite.play("off")
+	#---------------------------------
+	
 	
 	if is_button_on:
 		is_button_on = false
 
 
-func grow_shrink(delta):
-
-	if $Collision.scale.y > 0.5 and is_button_on:
-		#print("shrinking")
-		#print($Collision.scale.y)
-		#print(is_button_on)
-		$Collision.scale.y -= delta*1.5
-		$CollisionShape2D.scale.y -= delta*1.5
-		$CollisionShape2D2.scale.y -= delta*1.5
-		button_sprite.play("on")
-	elif $Collision.scale.y < 1.0 and not is_button_on:
-		#print("growing")
-		#print($Collision.scale.y)
-		#print(is_button_on)
-		$Collision.scale.y += delta*15
-		$CollisionShape2D.scale.y += delta*15
-		$CollisionShape2D2.scale.y += delta*15
-		button_sprite.play("off")
+#func grow_shrink(delta):
+	#if $Collision.scale.y > 0.5 and is_button_on:
+		#$Collision.scale.y -= delta*1.5
+		#$CollisionShape2D.scale.y -= delta*1.5
+		#$CollisionShape2D2.scale.y -= delta*1.5
+		#button_sprite.play("on")
+	#elif $Collision.scale.y < 1.0 and not is_button_on:
+		#$Collision.scale.y += delta*15
+		#$CollisionShape2D.scale.y += delta*15
+		#$CollisionShape2D2.scale.y += delta*15
+		#button_sprite.play("off")
 		
 		
 

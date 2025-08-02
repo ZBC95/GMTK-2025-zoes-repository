@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://gw5h24hl0p46"]
+
+[ext_resource type="Script" uid="uid://bt6vpm0dlfggj" path="res://player_ui.gd" id="1_5m0x8"]
+[ext_resource type="Texture2D" uid="uid://cq6qqpbw3nsgk" path="res://assets/professor_mcloopcoloursheet.png" id="1_lwipk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5m0x8"]
+atlas = ExtResource("1_lwipk")
+region = Rect2(0, 0, 600, 600)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_654h1"]
+atlas = ExtResource("1_lwipk")
+region = Rect2(600, 0, 600, 600)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pc08v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5m0x8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_654h1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player_ui" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5m0x8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(200, 200)
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_pc08v")
+frame_progress = 0.558774
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(633, 205)
+
+[node name="speech" type="Sprite2D" parent="Marker2D"]
+scale = Vector2(0.6, 0.6)
