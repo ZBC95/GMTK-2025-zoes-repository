@@ -24,5 +24,6 @@ JUMP_VELOCITY = 1100.0
 stream = ExtResource("6_ryrav")
 autoplay = true
 
-[node name="pause_component" parent="." instance=ExtResource("7_ev4ff")]
-visible = false
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_component" parent="CanvasLayer" instance=ExtResource("7_ev4ff")]

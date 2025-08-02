@@ -7,7 +7,7 @@ signal ghost_spawned(sent_ghost)
 @onready var player = get_node("Player")
 @onready var loop = get_node("Level/Looping_Componenet")
 @onready var level = get_node("Level")
-@onready var pause_comp = get_node("Camera2D/pause_component")
+@onready var pause_comp = get_node("CanvasLayer/pause_component")
 
 
 var is_paused = false
@@ -29,6 +29,7 @@ func _ready():
 	add_child(ghost_init)
 
 func _process(delta: float) -> void:
+	print("game processing")
 	$MusicPlayer.volume_linear = Global.music_volume*pause_vol
 	$MusicPlayer.pitch_scale = pause_pitch
 	if Input.is_action_just_pressed("Restart"):
@@ -65,17 +66,17 @@ func _on_level_completed():
 func pause():
 	if not is_paused:
 		pause_comp.visible = true
-		level.process_mode = PROCESS_MODE_DISABLED
-		player.process_mode = PROCESS_MODE_DISABLED
+		for x in get_children():
+			if x != $Camera2D and x != $MusicPlayer and x != $CanvasLayer:
+				x.process_mode = PROCESS_MODE_DISABLED
 		pause_vol = 0.25
 		pause_pitch = 0.5
-		is_paused != is_paused
-		#pause_comp.positon.x = $Camera2D.position.x
-		#pause_comp.positon.y = $Camera2D.position.y
+		is_paused = not is_paused
 	else:
 		pause_comp.visible = false
-		level.PROCESS_MODE_INHERIT
-		player.PROCESS_MODE_INHERIT
+		for x in get_children():
+			if x != $Camera2D and x != $MusicPlayer and x != $CanvasLayer:
+				x.process_mode = PROCESS_MODE_INHERIT
 		pause_vol = 1.0
 		pause_pitch = 1.0
-		is_paused != is_paused
+		is_paused = not is_paused

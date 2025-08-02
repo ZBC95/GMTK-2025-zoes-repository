@@ -23,4 +23,6 @@ autoplay = true
 [node name="Player" parent="." instance=ExtResource("4_rpaxs")]
 position = Vector2(172, 464)
 
-[node name="pause_component" parent="." instance=ExtResource("7_bkvxf")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_component" parent="CanvasLayer" instance=ExtResource("7_bkvxf")]
