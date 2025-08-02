@@ -23,4 +23,6 @@ autoplay = true
 
 [node name="Level" parent="." instance=ExtResource("6_7uw5q")]
 
-[node name="pause_component" parent="." instance=ExtResource("7_58whc")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="pause_component" parent="CanvasLayer" instance=ExtResource("7_58whc")]
