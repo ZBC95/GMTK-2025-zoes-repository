@@ -13,7 +13,8 @@ enum PlayerState {
 	FALL,
 	LAND,
 	SKID,
-	BLOCK
+	BLOCK,
+	DEAD
 }
 
 var current_state: PlayerState = PlayerState.IDLE
@@ -39,62 +40,63 @@ func _physics_process(delta: float) -> void:
 	check_overlaps()
 	
 	record_movement()
-	
-	# Add the gravity.
-	if not is_on_floor():
-		velocity.y += gravity * delta
-		# Set jump_up or fall animation based on vertical velocity
-		if velocity.y < 0:
-			current_state = PlayerState.JUMP_UP
-		else:
-			current_state = PlayerState.FALL
-
-	# Handle jump.
-	if Input.is_action_just_pressed("Jump") and is_on_floor():
-		velocity.y = -JUMP_VELOCITY
-		current_state = PlayerState.JUMP_UP
-
-	# Handle blocking
-	if Input.is_action_pressed("Down") and (is_on_floor() or overlaps.size() != 0):
-		is_blocking = true
-		current_state = PlayerState.BLOCK
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	elif Input.is_action_just_released("Down"):
-		is_blocking = false
-		current_state = PlayerState.IDLE
-	
-# Only allow movement if not blocking
-	if !is_blocking:
-		var direction := Input.get_axis("Left", "Right")
-		
-		if direction:
-			# Check for skid state
-			if abs(velocity.x) > SPEED * 0.8 and sign(direction) != sign(previous_direction) and previous_direction != 0:
-				current_state = PlayerState.SKID
-				player_sprite.frame = 0  # Reset frame when entering skid state
-			
-			velocity.x = direction * SPEED
-			if direction == -1:
-				player_sprite.flip_h = true
+	 # If not dead
+	if current_state != PlayerState.DEAD:
+		# Add the gravity.
+		if not is_on_floor():
+			velocity.y += gravity * delta
+			# Set jump_up or fall animation based on vertical velocity
+			if velocity.y < 0:
+				current_state = PlayerState.JUMP_UP
 			else:
-				player_sprite.flip_h = false
-				
-			if current_state != PlayerState.SKID and is_on_floor():
-				current_state = PlayerState.RUN
-		else:
+				current_state = PlayerState.FALL
+
+		# Handle jump.
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
+			velocity.y = -JUMP_VELOCITY
+			current_state = PlayerState.JUMP_UP
+
+		# Handle blocking
+		if Input.is_action_pressed("Down") and (is_on_floor() or overlaps.size() != 0):
+			is_blocking = true
+			current_state = PlayerState.BLOCK
 			velocity.x = move_toward(velocity.x, 0, SPEED)
-			if current_state != PlayerState.LAND and is_on_floor() and !is_blocking:
-				current_state = PlayerState.IDLE
+		elif Input.is_action_just_released("Down"):
+			is_blocking = false
+			current_state = PlayerState.IDLE
+		
+	# Only allow movement if not blocking
+		if !is_blocking:
+			var direction := Input.get_axis("Left", "Right")
+			
+			if direction:
+				# Check for skid state
+				if abs(velocity.x) > SPEED * 0.8 and sign(direction) != sign(previous_direction) and previous_direction != 0:
+					current_state = PlayerState.SKID
+					player_sprite.frame = 0  # Reset frame when entering skid state
+				
+				velocity.x = direction * SPEED
+				if direction == -1:
+					player_sprite.flip_h = true
+				else:
+					player_sprite.flip_h = false
+					
+				if current_state != PlayerState.SKID and is_on_floor():
+					current_state = PlayerState.RUN
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				if current_state != PlayerState.LAND and is_on_floor() and !is_blocking:
+					current_state = PlayerState.IDLE
 
-	# Landing state check
-	if is_on_floor() and !was_on_floor:
-		current_state = PlayerState.LAND
-		player_sprite.frame = 0  # Reset frame when landing
+		# Landing state check
+		if is_on_floor() and !was_on_floor:
+			current_state = PlayerState.LAND
+			player_sprite.frame = 0  # Reset frame when landing
 
-	## Falling state check
-	#if !is_on_floor() and velocity.y > 0:
-		#current_state = PlayerState.FALL
 
+	elif current_state == PlayerState.DEAD:
+		# Dead blob boys don't move
+		velocity = Vector2.ZERO
 	update_animation()
 	
 	was_on_floor = is_on_floor()
@@ -139,6 +141,8 @@ func update_animation():
 				current_state = PlayerState.RUN
 		PlayerState.BLOCK:
 			player_sprite.play("block")
+		PlayerState.DEAD:
+			player_sprite.play("die")
 
 
 func record_movement():
@@ -161,4 +165,6 @@ func check_overlaps():
 				die()
 
 func die():
+	current_state = PlayerState.DEAD
+	await get_tree().create_timer(0.875).timeout
 	queue_free()
