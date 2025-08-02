@@ -15,12 +15,9 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if is_button_on:
-		
 		is_button_on = false
 		$Sprite2D2.visible = false
-
 	else:
-		pass
 		$Sprite2D2.visible = true
 
 func button_press(channel_sent):
