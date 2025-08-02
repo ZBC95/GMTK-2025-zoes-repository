@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4bd8ihgj2chg"]
+
+[ext_resource type="PackedScene" uid="uid://c36a581idwf5t" path="res://menu.tscn" id="1_06t4h"]
+[ext_resource type="PackedScene" uid="uid://nnk1c08o6sho" path="res://level_select.tscn" id="2_7vrkn"]
+[ext_resource type="PackedScene" uid="uid://dmr0jtbdfgo3c" path="res://settings.tscn" id="3_fu7sn"]
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="menu" parent="." instance=ExtResource("1_06t4h")]
+layout_mode = 1
+
+[node name="level_select" parent="." instance=ExtResource("2_7vrkn")]
+layout_mode = 1
+
+[node name="settings" parent="." instance=ExtResource("3_fu7sn")]
+layout_mode = 1

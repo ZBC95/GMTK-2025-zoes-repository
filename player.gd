@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 signal button_active(channel_sent)
 
-@export var SPEED = 300.0
-@export var JUMP_VELOCITY = 600.0
-@export var gravity = 1000
+@export var SPEED = 600.0
+@export var JUMP_VELOCITY = 910.0
+@export var gravity = 1500
 
 enum PlayerState {
 	IDLE,
