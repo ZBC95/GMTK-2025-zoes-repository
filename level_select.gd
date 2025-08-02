@@ -36,3 +36,13 @@ func _on_level_02_pressed() -> void:
 func _on_level_03_pressed() -> void:
 	Global.cur_level = 2
 	get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+
+
+func _on_level_04_pressed() -> void:
+	Global.cur_level = 3
+	get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+
+
+func _on_level_05_pressed() -> void:
+	Global.cur_level = 4
+	get_tree().change_scene_to_file(Global.levels[Global.cur_level])
