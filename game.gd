@@ -8,6 +8,8 @@ signal ghost_spawned(sent_ghost)
 @onready var loop = get_node("Level/Looping_Componenet")
 @onready var level = get_node("Level")
 @onready var pause_comp = get_node("CanvasLayer/pause_component")
+@onready var pause_sound: AudioStreamPlayer = %PauseSound
+@onready var nice_sound: AudioStreamPlayer = %NiceSound
 
 
 var is_paused = false
@@ -38,6 +40,7 @@ func _process(delta: float) -> void:
 	
 
 func _on_player_looped(movement_data):
+	player.loop_sound.play()
 	var ghost = ghost_scene.instantiate()
 	ghost.movement_data = movement_data
 	var ghost2 = ghost_scene.instantiate()
@@ -56,6 +59,7 @@ func _on_player_looped(movement_data):
 
 func _on_level_completed():
 	print("level complete")
+	nice_sound.play()
 	Global.cur_level += 1
 	if Global.levels.size() > Global.cur_level:
 		get_tree().change_scene_to_file(Global.levels[Global.cur_level])
@@ -63,6 +67,7 @@ func _on_level_completed():
 		get_tree().change_scene_to_file("res://main_menu.tscn")
 
 func pause():
+	pause_sound.play()
 	if not is_paused:
 		pause_comp.visible = true
 		for x in get_children():

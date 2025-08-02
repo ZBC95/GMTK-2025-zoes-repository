@@ -33,7 +33,9 @@ var channel_to_emit: int = 0
 @onready var loop_position_start: Vector2 = Vector2(loop.bl_x*64, loop.bl_y*64)
 @onready var loop_position_end: Vector2 = Vector2(loop.br_x*64, loop.br_y*64)
 @onready var player_sprite: AnimatedSprite2D = %PlayerSprite
-
+@onready var death_sound: AudioStreamPlayer = %DeathSound
+@onready var loop_sound: AudioStreamPlayer = %LoopSound
+@onready var nice_sound: AudioStreamPlayer = %NiceSound
 
 func _physics_process(delta: float) -> void:
 	
@@ -165,6 +167,7 @@ func check_overlaps():
 				die()
 
 func die():
+	death_sound.play()
 	current_state = PlayerState.DEAD
 	await get_tree().create_timer(0.875).timeout
 	queue_free()
