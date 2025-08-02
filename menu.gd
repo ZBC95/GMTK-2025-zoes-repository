@@ -11,6 +11,10 @@ func _ready() -> void:
 	#var level_select = get_node("../level_select")
 	#var settings = get_node("../settings")
 	
+	# Grab focus on first element in menu for controllers
+	var vbox = get_node("VBoxContainer")
+	vbox.get_child(0).grab_focus()
+	
 	menu.visible = true
 	level_select.visible = false
 	settings.visible = false
