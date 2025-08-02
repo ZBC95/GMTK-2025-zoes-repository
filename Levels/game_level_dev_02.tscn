@@ -5,17 +5,16 @@
 [ext_resource type="PackedScene" uid="uid://bry0e14a7otyd" path="res://camera_2d.tscn" id="3_hhcrq"]
 [ext_resource type="PackedScene" uid="uid://pec1kaegnjpg" path="res://Level_Making/player.tscn" id="4_jlypn"]
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="6_1pdor"]
-[ext_resource type="PackedScene" uid="uid://dqaxnt0kvlcc" path="res://Levels/level_00.tscn" id="6_7uw5q"]
+[ext_resource type="PackedScene" uid="uid://bxfivi5el4656" path="res://Levels/level_dev2.tscn" id="6_7uw5q"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_7uw5q")
 ghost_scene = ExtResource("2_58whc")
-next_level = "res://Levels/game_level_dev_01.tscn"
 
 [node name="Camera2D" parent="." instance=ExtResource("3_hhcrq")]
 
 [node name="Player" parent="." instance=ExtResource("4_jlypn")]
-position = Vector2(240, 390)
+position = Vector2(280, 530)
 JUMP_VELOCITY = 1100.0
 gravity = 1500
 
