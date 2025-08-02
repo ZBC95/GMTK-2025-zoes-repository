@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bc352oi60hqxa"]
+
+[ext_resource type="Texture2D" uid="uid://cibr68m4d0qc5" path="res://assets/tileset2.png" id="1_452y1"]
+
+[node name="Platform" type="AnimatableBody2D"]
+
+[node name="PlatformSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_452y1")
+region_enabled = true
+region_rect = Rect2(352, 832, 128, 64)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(0, -29, 37, -28, 52, -22, 61, -10, 62, 0, 60, 13, 52, 24, 38, 31, -35, 29, -49, 26, -60, 13, -61, -4, -57, -19, -42, -29)
+one_way_collision = true
