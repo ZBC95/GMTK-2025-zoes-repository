@@ -302,7 +302,7 @@ modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 text = ":(     =     Not Won
 :)     =     Won
-:D     =     Won with Star!"
+:D     =     Won with Coin!"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_01" to="." method="_on_level_01_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_02" to="." method="_on_level_02_pressed"]
@@ -310,4 +310,6 @@ text = ":(     =     Not Won
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_04" to="." method="_on_level_04_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_05" to="." method="_on_level_05_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_06" to="." method="_on_level_06_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_07" to="." method="_on_level_07_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_08" to="." method="_on_level_08_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer9/Back" to="." method="_on_back_pressed"]
