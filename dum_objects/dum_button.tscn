@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://dc6kyeolg0i54"]
+
+[ext_resource type="Texture2D" uid="uid://8apoyh8mraef" path="res://assets/button64.png" id="1_j1dqu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jqul7"]
+atlas = ExtResource("1_j1dqu")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1ao7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jqul7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dum_button" type="AnimatedSprite2D"]
+position = Vector2(0, -32)
+scale = Vector2(2, 1)
+sprite_frames = SubResource("SpriteFrames_1ao7d")

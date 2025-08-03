@@ -37,6 +37,8 @@ func _process(delta: float) -> void:
 		Global.load_cur()
 	if Input.is_action_just_pressed("Pause"):
 		pause()
+	if Input.is_action_just_pressed("Mute"):
+		Global.music_volume = 0.0
 	
 
 func _on_player_looped(movement_data):

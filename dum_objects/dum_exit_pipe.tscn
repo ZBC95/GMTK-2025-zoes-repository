@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dph25f3kh0318"]
+
+[ext_resource type="Texture2D" uid="uid://tur4exeoqna0" path="res://assets/pipe_sheet64.png" id="1_mas5v"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p51jo"]
+atlas = ExtResource("1_mas5v")
+region = Rect2(0, 0, 128, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rpilo"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p51jo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dum_exit_pipe" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_rpilo")
