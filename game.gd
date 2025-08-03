@@ -18,6 +18,7 @@ var pause_vol = 1.0
 var pause_pitch = 1.0
 
 func _ready():
+	star.get_node("Sprite2D").play()
 	Global.ghost_num = 0
 	SignalBus.player_looped.connect(_on_player_looped)
 	SignalBus.level_completed.connect(_on_level_completed)
