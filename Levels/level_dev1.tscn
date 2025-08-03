@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://4404g0eg6au5" path="res://assets/exit64.png" id="3_1gagm"]
 [ext_resource type="PackedScene" uid="uid://d11r447pm7biw" path="res://looping_componenet.tscn" id="3_nndsm"]
 [ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="4_k6iak"]
-[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://assets/star.tscn" id="7_nohm0"]
+[ext_resource type="PackedScene" path="res://assets/star.tscn" id="7_nohm0"]
 [ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="8_ba4c7"]
 [ext_resource type="PackedScene" uid="uid://dxu8mra5ua1v3" path="res://Level_Making/light.tscn" id="9_d8uuq"]
 [ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="10_5um2t"]
