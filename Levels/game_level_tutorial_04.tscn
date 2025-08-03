@@ -1,12 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://cyxsmxqvbbtxc"]
+[gd_scene load_steps=11 format=3 uid="uid://cyxsmxqvbbtxc"]
 
 [ext_resource type="Script" uid="uid://bi6xqguwa44s" path="res://game.gd" id="1_6lt0u"]
 [ext_resource type="PackedScene" uid="uid://c26dkstg4cqe8" path="res://player_ghost.tscn" id="2_uion6"]
-[ext_resource type="PackedScene" path="res://Levels/level_tutorial_04.tscn" id="3_6lt0u"]
+[ext_resource type="PackedScene" uid="uid://dbv118iqap4k" path="res://Levels/level_tutorial_04.tscn" id="3_6lt0u"]
 [ext_resource type="PackedScene" uid="uid://bry0e14a7otyd" path="res://camera_2d.tscn" id="4_mvx5i"]
 [ext_resource type="PackedScene" uid="uid://pec1kaegnjpg" path="res://Level_Making/player.tscn" id="5_r08pa"]
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="6_76oar"]
 [ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="7_ypfad"]
+[ext_resource type="PackedScene" uid="uid://gw5h24hl0p46" path="res://player_ui.tscn" id="8_mvx5i"]
 [ext_resource type="AudioStream" uid="uid://d10krbieamqy5" path="res://assets/sfx/pause.wav" id="8_uion6"]
 [ext_resource type="AudioStream" uid="uid://ub220pwldlci" path="res://assets/sfx/block.wav" id="9_mq5g7"]
 
@@ -27,6 +28,8 @@ autoplay = true
 bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="player_ui" parent="CanvasLayer" instance=ExtResource("8_mvx5i")]
 
 [node name="pause_component" parent="CanvasLayer" instance=ExtResource("7_ypfad")]
 

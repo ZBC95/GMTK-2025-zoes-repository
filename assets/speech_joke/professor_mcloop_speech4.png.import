@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cn6dwr5jc06d6"
-path="res://.godot/imported/professor_mcloop_speech2.png-ef4e0788f9e9bb3205396bfe855753b8.ctex"
+uid="uid://ck11qf55ki6bk"
+path="res://.godot/imported/professor_mcloop_speech4.png-6b8d05013749eb8a559bdc30f8f9d0e8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/speech_tutorial/professor_mcloop_speech2.png"
-dest_files=["res://.godot/imported/professor_mcloop_speech2.png-ef4e0788f9e9bb3205396bfe855753b8.ctex"]
+source_file="res://assets/speech_joke/professor_mcloop_speech4.png"
+dest_files=["res://.godot/imported/professor_mcloop_speech4.png-6b8d05013749eb8a559bdc30f8f9d0e8.ctex"]
 
 [params]
 
