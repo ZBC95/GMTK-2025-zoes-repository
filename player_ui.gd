@@ -15,7 +15,12 @@ var speech_tutorial: Array = [
 ]
 var speech_joke: Array = [
 	"res://assets/speech_joke/professor_mcloop_speech4.png",
-	"res://assets/speech_joke/professor_mcloop_speech6.png"
+	"res://assets/speech_joke/professor_mcloop_speech6.png",
+	"res://assets/speech_joke/professor_mcloop_speech7.png",
+	"res://assets/speech_joke/professor_mcloop_speech8.png",
+	"res://assets/speech_joke/professor_mcloop_speech9.png",
+	"res://assets/speech_joke/professor_mcloop_speech10.png",
+	
 ]
 
 var speech_reset = "res://assets/speech_other/professor_mcloop_speech2.png"

@@ -8,6 +8,7 @@ var levels = [
 	"res://Levels/game_level_superfreak1.tscn",
 	"res://Levels/synj_lvls/game_level_synj1.tscn",
 	"res://Levels/game_level_med1.tscn",
+	"res://Levels/synj_lvls/game_level_synj2.tscn",
 	"res://Levels/game_level_hard1.tscn",
 ]
 var music_volume = 1.0
