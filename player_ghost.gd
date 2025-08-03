@@ -50,7 +50,7 @@ func update_collision_layers():
 		set_collision_layer_value(1, true)
 		set_collision_mask_value(1, true)
 	else:
-		ghost_sprite.modulate = Color(0.57, 0.0, 0.0, 0.588)
+		ghost_sprite.modulate = Color(0.0, 0.341, 0.569, 0.588)
 		$Area2D.set_collision_layer_value(2, true)
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)
