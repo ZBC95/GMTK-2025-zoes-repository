@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://bi6xqguwa44s" path="res://game.gd" id="1_526co"]
 [ext_resource type="PackedScene" uid="uid://c26dkstg4cqe8" path="res://player_ghost.tscn" id="2_ubi6i"]
-[ext_resource type="PackedScene" uid="uid://cw36p2sec773c" path="res://Levels/level_tutorial_03.tscn" id="3_526co"]
+[ext_resource type="PackedScene" uid="uid://dxsq60onwamww" path="res://Levels/level_tutorial_03.tscn" id="3_526co"]
 [ext_resource type="PackedScene" uid="uid://bry0e14a7otyd" path="res://camera_2d.tscn" id="3_sw4yy"]
 [ext_resource type="PackedScene" uid="uid://pec1kaegnjpg" path="res://Level_Making/player.tscn" id="4_q1u1j"]
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="6_3xxmq"]
 [ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="7_f58p3"]
-[ext_resource type="PackedScene" uid="uid://gw5h24hl0p46" path="res://player_ui.tscn" id="8_q1u1j"]
+[ext_resource type="PackedScene" path="res://player_ui.tscn" id="8_q1u1j"]
 [ext_resource type="AudioStream" uid="uid://d10krbieamqy5" path="res://assets/sfx/pause.wav" id="8_sw4yy"]
 [ext_resource type="AudioStream" uid="uid://ub220pwldlci" path="res://assets/sfx/block.wav" id="9_q1u1j"]
 
