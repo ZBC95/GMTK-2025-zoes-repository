@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 signal button_active(channel_sent)
+signal dies()
 
 @export var SPEED = 600.0
 @export var JUMP_VELOCITY = 910.0
@@ -167,6 +168,7 @@ func check_overlaps():
 				die()
 
 func die():
+	dies.emit()
 	death_sound.play()
 	current_state = PlayerState.DEAD
 	await get_tree().create_timer(0.875).timeout
