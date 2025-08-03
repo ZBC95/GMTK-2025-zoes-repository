@@ -8,13 +8,13 @@ var died = false
 @onready var player = $"../../Player"
 
 var speech_tutorial: Array = [
-	"res://assets/speech_tutorial/professor_mcloop_speech1.png",
 	"res://assets/speech_tutorial/professor_mcloop_speech3.png",
+	"res://assets/speech_tutorial/professor_mcloop_speech1.png",
 	"res://assets/speech_tutorial/professor_mcloop_speech5.png",
 	"res://assets/speech_tutorial/professor_mcloop_speech.png"
 ]
 var speech_joke: Array = [
-	"res://assets/speech_tutorial/professor_mcloop_speech4.png",
+	"res://assets/speech_joke/professor_mcloop_speech4.png",
 	"res://assets/speech_joke/professor_mcloop_speech6.png"
 ]
 
@@ -39,10 +39,10 @@ func _ready() -> void:
 			Global.speech_level_count += 1
 		else:
 			Global.speech_level_count = 0
-			if Global.speech_tutorial_num < speech_tutorial.size():
+			if Global.speech_joke_num < speech_joke.size():
 				$Marker2D/speech.texture = load(speech_joke[Global.speech_joke_num])
 			else:
-				Global.speech_tutorial_num = 0
+				Global.speech_joke_num = 0
 				$Marker2D/speech.texture = load(speech_joke[Global.speech_joke_num])
 
 func _process(delta: float) -> void:

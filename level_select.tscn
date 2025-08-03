@@ -85,6 +85,38 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Level 4"
 
+[node name="HBoxContainer5" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer5"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer5"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer5"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer5"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -108,6 +140,38 @@ text = "Level 7"
 custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Level 8"
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer6"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer6"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer6"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer6"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
@@ -135,6 +199,38 @@ layout_mode = 2
 text = "Level 12
 "
 
+[node name="HBoxContainer7" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer7"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer7"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer7"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer7"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
 [node name="HBoxContainer4" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 alignment = 1
@@ -159,15 +255,58 @@ custom_minimum_size = Vector2(100, 50)
 layout_mode = 2
 text = "Level 16"
 
-[node name="Back" type="Button" parent="VBoxContainer"]
-custom_minimum_size = Vector2(300, 75)
+[node name="HBoxContainer8" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer8"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/HBoxContainer8"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="VBoxContainer/HBoxContainer8"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="VBoxContainer/HBoxContainer8"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+text = ":("
+horizontal_alignment = 1
+
+[node name="HBoxContainer9" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Back" type="Button" parent="VBoxContainer/HBoxContainer9"]
+custom_minimum_size = Vector2(225, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 text = "Back"
+
+[node name="Key" type="Label" parent="VBoxContainer/HBoxContainer9"]
+modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+text = ":(     =     Not Won
+:)     =     Won
+:D     =     Won with Star!"
 
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_01" to="." method="_on_level_01_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_02" to="." method="_on_level_02_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_03" to="." method="_on_level_03_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_04" to="." method="_on_level_04_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_05" to="." method="_on_level_05_pressed"]
-[connection signal="pressed" from="VBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer9/Back" to="." method="_on_back_pressed"]

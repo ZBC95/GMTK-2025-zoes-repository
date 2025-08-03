@@ -6,6 +6,7 @@ signal ghost_spawned(sent_ghost)
 
 @onready var player = get_node("Player")
 @onready var loop = get_node("Level/Looping_Componenet")
+@onready var star = get_node("Level/star")
 @onready var level = get_node("Level")
 @onready var pause_comp = get_node("CanvasLayer/pause_component")
 @onready var pause_sound: AudioStreamPlayer = %PauseSound
@@ -63,6 +64,11 @@ func _on_player_looped(movement_data):
 func _on_level_completed():
 	print("level complete")
 	nice_sound.play()
+	if star.collected == true:
+		Global.level_score.set(Global.cur_level, 2)
+	elif Global.level_score.get(Global.cur_level) != 2:
+		Global.level_score.set(Global.cur_level, 1)
+		
 	Global.cur_level += 1
 	if Global.levels.size() > Global.cur_level:
 		Global.load_cur()
