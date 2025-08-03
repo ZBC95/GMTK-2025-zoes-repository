@@ -9,6 +9,7 @@ signal ghost_spawned(sent_ghost)
 @onready var star = get_node("Level/star")
 @onready var level = get_node("Level")
 @onready var pause_comp = get_node("CanvasLayer/pause_component")
+@onready var button_to_focus = get_node("CanvasLayer/pause_component/pause_menu/VBoxContainer/resume")
 @onready var pause_sound: AudioStreamPlayer = %PauseSound
 @onready var nice_sound: AudioStreamPlayer = %NiceSound
 
@@ -78,6 +79,7 @@ func _on_level_completed():
 
 func pause():
 	pause_sound.play()
+	button_to_focus.grab_focus()
 	if not is_paused:
 		pause_comp.visible = true
 		for x in get_children():

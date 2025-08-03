@@ -48,18 +48,23 @@ grow_vertical = 2
 alignment = 1
 
 [node name="resume" type="Button" parent="VBoxContainer"]
+unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_bottom = NodePath("../settings")
 text = "Resume"
 
 [node name="settings" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../resume")
+focus_neighbor_bottom = NodePath("../main_menu")
 text = "Settings"
 
 [node name="main_menu" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+focus_neighbor_top = NodePath("../settings")
 text = "Main Menu"
 
 [connection signal="pressed" from="VBoxContainer/resume" to="." method="_on_resume_pressed"]
