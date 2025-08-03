@@ -9,7 +9,7 @@ func _ready() -> void:
 	SignalBus.player_looped.connect(_on_player_looped)
 
 func _process(delta: float) -> void:
-	print(count)
+	#print(count)
 	count += 1
 	var overlaps = get_overlapping_areas()
 	if overlaps.size() != 0 and collected == false:
@@ -23,6 +23,6 @@ func _process(delta: float) -> void:
 		
 	
 func _on_player_looped(movement_data):
-	print("player looped")
+	#print("player looped")
 	count = 0
 	$Sprite2D.visible = true

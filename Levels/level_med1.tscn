@@ -8,7 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="6_8yuo3"]
 [ext_resource type="PackedScene" uid="uid://dxu8mra5ua1v3" path="res://Level_Making/light.tscn" id="7_vnkk5"]
 [ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="8_v4nyq"]
-[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://Level_Making/star.tscn" id="9_gckhu"]
+[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://assets/star.tscn" id="9_gckhu"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_cenir")
