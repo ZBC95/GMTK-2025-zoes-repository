@@ -7,7 +7,7 @@
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="5_bjspq"]
 [ext_resource type="PackedScene" uid="uid://cqh3ofqpj3fi2" path="res://Levels/level_hard1.tscn" id="6_arj43"]
 [ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="7_bkvxf"]
-[ext_resource type="PackedScene" path="res://player_ui.tscn" id="8_bjspq"]
+[ext_resource type="PackedScene" uid="uid://gw5h24hl0p46" path="res://player_ui.tscn" id="8_bjspq"]
 [ext_resource type="AudioStream" uid="uid://d10krbieamqy5" path="res://assets/sfx/pause.wav" id="8_gp4fi"]
 [ext_resource type="AudioStream" uid="uid://ub220pwldlci" path="res://assets/sfx/block.wav" id="9_rpaxs"]
 

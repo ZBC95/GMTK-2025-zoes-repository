@@ -436,12 +436,12 @@ tile_set = SubResource("TileSet_hykmj")
 script = ExtResource("3_dd556")
 
 [node name="Looping_Componenet" parent="." instance=ExtResource("4_4eq57")]
-tl_y = -2
+tl_y = -13
 tr_x = 36
-tr_y = -2
-bl_y = 12
+tr_y = -13
+bl_y = 10
 br_x = 36
-br_y = 12
+br_y = 10
 
 [node name="ExitPipe" parent="." instance=ExtResource("5_3u274")]
 position = Vector2(1088, -320)
