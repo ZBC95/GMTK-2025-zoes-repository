@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://d11r447pm7biw" path="res://looping_componenet.tscn" id="4_4eq57"]
 [ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="5_3u274"]
 [ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="6_i7y0t"]
-[ext_resource type="PackedScene" path="res://Level_Making/star.tscn" id="6_li5hd"]
 [ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="7_dd556"]
+[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://assets/star.tscn" id="9_3u274"]
 [ext_resource type="PackedScene" uid="uid://cnsp3yarh2mii" path="res://Level_Making/platform.tscn" id="9_4eq57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
@@ -455,8 +455,8 @@ position = Vector2(872, 192)
 [node name="Door2" parent="." instance=ExtResource("7_dd556")]
 position = Vector2(944, -192)
 
-[node name="star" parent="." instance=ExtResource("6_li5hd")]
-position = Vector2(184, -264)
-
 [node name="Platform" parent="." instance=ExtResource("9_4eq57")]
 position = Vector2(1856, 32)
+
+[node name="star" parent="." instance=ExtResource("9_3u274")]
+position = Vector2(577, 47)
