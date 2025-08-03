@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4bd8ihgj2chg"]
+[gd_scene load_steps=5 format=3 uid="uid://b4bd8ihgj2chg"]
 
 [ext_resource type="PackedScene" uid="uid://c36a581idwf5t" path="res://menu.tscn" id="1_06t4h"]
 [ext_resource type="PackedScene" uid="uid://nnk1c08o6sho" path="res://level_select.tscn" id="2_7vrkn"]
 [ext_resource type="PackedScene" uid="uid://dmr0jtbdfgo3c" path="res://settings.tscn" id="3_fu7sn"]
+[ext_resource type="AudioStream" uid="uid://tl2ri8dfdc2r" path="res://assets/music/Menu-sound.ogg" id="4_jix8l"]
 
 [node name="main_menu" type="Control"]
 layout_mode = 3
@@ -20,3 +21,8 @@ layout_mode = 1
 
 [node name="settings" parent="." instance=ExtResource("3_fu7sn")]
 layout_mode = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_jix8l")
+autoplay = true
+bus = &"Music"
