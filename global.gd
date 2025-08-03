@@ -13,6 +13,7 @@ var cur_level: int
 var speech_tutorial_num: int = 0
 var speech_level_count: int = 0
 var speech_joke_num: int = 0
+var ghost_num : int
 
 var level_score = {
 	0: 0,
