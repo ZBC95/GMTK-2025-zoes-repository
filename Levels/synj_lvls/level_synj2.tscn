@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="5_3u274"]
 [ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://assets/star.tscn" id="6_li5hd"]
 
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_ej4yx")
 texture_region_size = Vector2i(64, 64)
