@@ -28,7 +28,6 @@ autoplay = true
 bus = &"Music"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-visible = false
 
 [node name="player_ui" parent="CanvasLayer" instance=ExtResource("7_pv31w")]
 
