@@ -121,10 +121,13 @@ func _physics_process(delta: float) -> void:
 func update_animation():
 	match current_state:
 		PlayerState.IDLE:
+			player_sprite.modulate = Color(1,1,1,1)
 			player_sprite.play("idle")
 		PlayerState.RUN:
+			player_sprite.modulate = Color(1,1,1,1)
 			player_sprite.play("run")
 		PlayerState.JUMP_UP:
+			player_sprite.modulate = Color(1,1,1,1)
 			player_sprite.play("jump_up")
 		PlayerState.FALL:
 			player_sprite.play("fall")
@@ -144,6 +147,7 @@ func update_animation():
 				current_state = PlayerState.RUN
 		PlayerState.BLOCK:
 			player_sprite.play("block")
+			player_sprite.modulate = Color(0.0, 0.57, 0.105, 0.588)
 		PlayerState.DEAD:
 			player_sprite.play("die")
 
