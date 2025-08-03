@@ -20,6 +20,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Mute"):
 		Global.music_volume = 0.0
+	$"../AudioStreamPlayer".volume_linear = Global.music_volume
 
 func _on_new_game_pressed() -> void:
 	Global.cur_level = 0
