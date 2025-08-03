@@ -4,8 +4,6 @@ extends Control
 @onready var level_select = get_node("../level_select")
 @onready var settings = get_node("../settings")
 
-var first_level = "res://Levels/game_level_dev_01.tscn"
-
 func _ready() -> void:
 	#var menu = get_node("../menu")
 	#var level_select = get_node("../level_select")
@@ -21,7 +19,7 @@ func _ready() -> void:
 
 func _on_new_game_pressed() -> void:
 	Global.cur_level = 0
-	get_tree().change_scene_to_file(Global.levels[Global.cur_level])
+	Global.load_cur()
 
 
 func _on_level_select_pressed() -> void:
