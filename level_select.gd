@@ -74,3 +74,8 @@ func _on_level_07_pressed() -> void:
 func _on_level_08_pressed() -> void:
 	Global.cur_level = 7
 	Global.load_cur()
+
+
+func _on_level_09_pressed() -> void:
+	Global.cur_level = 8
+	Global.load_cur()
