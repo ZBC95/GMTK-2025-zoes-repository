@@ -4,8 +4,10 @@ signal button_active(channel_sent)
 signal dies()
 
 @export var SPEED = 600.0
-@export var JUMP_VELOCITY = 910.0
-@export var gravity = 1500
+@export var JUMP_VELOCITY = 1040
+@export var gravity = 2000
+
+var jump_count : int = 0
 
 enum PlayerState {
 	IDLE,
@@ -29,6 +31,7 @@ var count = 0
 var movement_data = {}
 var overlaps
 var channel_to_emit: int = 0
+var is_want_up = false
 
 @onready var loop = get_node("../Level/Looping_Componenet")
 @onready var loop_position_start: Vector2 = Vector2(loop.bl_x*64, loop.bl_y*64)
@@ -39,6 +42,19 @@ var channel_to_emit: int = 0
 @onready var nice_sound: AudioStreamPlayer = %NiceSound
 
 func _physics_process(delta: float) -> void:
+	
+	if Input.is_action_pressed("Jump") and velocity.y < 0 and is_want_up:
+		gravity  = 2000
+	elif velocity.y < 0:
+		gravity = 8000
+	else:
+		gravity = 3500
+	
+	if Input.is_action_just_released("Jump"):
+		is_want_up = false
+	
+	
+	
 	
 	check_overlaps()
 	
@@ -58,6 +74,7 @@ func _physics_process(delta: float) -> void:
 		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			velocity.y = -JUMP_VELOCITY
 			current_state = PlayerState.JUMP_UP
+			is_want_up = true
 
 		# Handle blocking
 		if Input.is_action_pressed("Down") and (is_on_floor() or overlaps.size() != 0):
@@ -79,7 +96,12 @@ func _physics_process(delta: float) -> void:
 					player_sprite.frame = 0  # Reset frame when entering skid state
 				
 				if position.x - 32 > loop_position_start.x or direction == 1:
+					
+					
+					
 					velocity.x = direction * SPEED
+					
+					
 				else:
 					velocity.x = 0.0
 				
