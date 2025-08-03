@@ -1,10 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://d11r447pm7biw"]
+[gd_scene load_steps=12 format=3 uid="uid://d11r447pm7biw"]
 
 [ext_resource type="Script" uid="uid://bymrc7ke5qx1c" path="res://looping_componenet.gd" id="1_hs47p"]
 [ext_resource type="Texture2D" uid="uid://bacuwyembhans" path="res://tl.png" id="2_voox1"]
 [ext_resource type="Texture2D" uid="uid://cp3j8hfieddqp" path="res://tr.png" id="3_tg5oj"]
 [ext_resource type="Texture2D" uid="uid://byfkprml0ucro" path="res://bl.png" id="4_fb2xd"]
 [ext_resource type="Texture2D" uid="uid://cnio2qwsjx4xj" path="res://br.png" id="5_ub1v0"]
+[ext_resource type="Texture2D" uid="uid://dsaaxrkkpg0uo" path="res://assets/loop_line_sheet5.png" id="5_voox1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tg5oj"]
+atlas = ExtResource("5_voox1")
+region = Rect2(0, 0, 128, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fb2xd"]
+atlas = ExtResource("5_voox1")
+region = Rect2(128, 0, 128, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ub1v0"]
+atlas = ExtResource("5_voox1")
+region = Rect2(256, 0, 128, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwl24"]
+atlas = ExtResource("5_voox1")
+region = Rect2(384, 0, 128, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xefwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tg5oj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fb2xd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ub1v0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fwl24")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Looping_Componenet" type="Node2D"]
 top_level = true
@@ -13,23 +50,59 @@ script = ExtResource("1_hs47p")
 [node name="top_left" type="Node2D" parent="."]
 
 [node name="Debug_sprite" type="Sprite2D" parent="top_left"]
+visible = false
 modulate = Color(1, 0, 1, 0.588235)
 texture = ExtResource("2_voox1")
 
 [node name="top_right" type="Node2D" parent="."]
 
 [node name="Debug_sprite" type="Sprite2D" parent="top_right"]
+visible = false
 modulate = Color(1, 0, 1, 0.588235)
 texture = ExtResource("3_tg5oj")
 
 [node name="bottom_left" type="Node2D" parent="."]
 
 [node name="Debug_sprite" type="Sprite2D" parent="bottom_left"]
+visible = false
 modulate = Color(1, 0, 1, 0.588235)
 texture = ExtResource("4_fb2xd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="bottom_left"]
+position = Vector2(0, -320)
+sprite_frames = SubResource("SpriteFrames_xefwp")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="bottom_left"]
+position = Vector2(0, -960)
+sprite_frames = SubResource("SpriteFrames_xefwp")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="bottom_left"]
+position = Vector2(0, -1600)
+sprite_frames = SubResource("SpriteFrames_xefwp")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="bottom_left"]
+position = Vector2(0, 320)
+sprite_frames = SubResource("SpriteFrames_xefwp")
 
 [node name="bottom_right" type="Node2D" parent="."]
 
 [node name="Debug_sprite" type="Sprite2D" parent="bottom_right"]
+visible = false
 modulate = Color(1, 0, 1, 0.588235)
 texture = ExtResource("5_ub1v0")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="bottom_right"]
+position = Vector2(0, -320)
+sprite_frames = SubResource("SpriteFrames_xefwp")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="bottom_right"]
+position = Vector2(0, -960)
+sprite_frames = SubResource("SpriteFrames_xefwp")
+
+[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="bottom_right"]
+position = Vector2(0, -1600)
+sprite_frames = SubResource("SpriteFrames_xefwp")
+
+[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="bottom_right"]
+position = Vector2(0, 320)
+sprite_frames = SubResource("SpriteFrames_xefwp")

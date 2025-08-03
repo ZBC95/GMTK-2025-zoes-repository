@@ -17,6 +17,10 @@ func _ready() -> void:
 	level_select.visible = false
 	settings.visible = false
 
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("Mute"):
+		Global.music_volume = 0.0
+
 func _on_new_game_pressed() -> void:
 	Global.cur_level = 0
 	Global.load_cur()
@@ -34,11 +38,11 @@ func _on_exit_game_pressed() -> void:
 	get_tree().quit()
 
 func open_level_select():
-	menu.visible = false
+
 	level_select.visible = true
-	settings.visible = false
+
 
 func open_settings():
-	menu.visible = false
-	level_select.visible = false
+
+
 	settings.visible = true

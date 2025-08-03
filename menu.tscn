@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://c36a581idwf5t"]
+[gd_scene load_steps=4 format=3 uid="uid://c36a581idwf5t"]
 
 [ext_resource type="Script" uid="uid://c3iteawy1qvpy" path="res://menu.gd" id="1_lti8b"]
+[ext_resource type="Theme" uid="uid://c2djnknsggaej" path="res://zoes_theme.tres" id="2_mae5d"]
+[ext_resource type="Texture2D" uid="uid://bigm1xngww07c" path="res://assets/menu_page.png" id="2_ouk20"]
 
 [node name="menu" type="Control"]
 layout_mode = 3
@@ -20,10 +22,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -231.5
-offset_top = -168.5
-offset_right = 231.5
-offset_bottom = 168.5
+offset_left = -265.0
+offset_top = -253.0
+offset_right = 150.0
+offset_bottom = -138.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
@@ -31,24 +33,63 @@ alignment = 1
 [node name="NewGame" type="Button" parent="VBoxContainer"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-text = "New Game"
+size_flags_vertical = 3
+theme = ExtResource("2_mae5d")
 
-[node name="Level Select" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer5" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -224.0
+offset_top = -113.0
+offset_right = 209.0
+offset_bottom = -8.0
+
+[node name="Level Select" type="Button" parent="VBoxContainer5"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-text = "Level Select"
+size_flags_vertical = 3
+theme = ExtResource("2_mae5d")
 
-[node name="Settings" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer4" type="VBoxContainer" parent="."]
+layout_mode = 2
+offset_left = -269.0
+offset_top = -8.0
+offset_right = 171.0
+offset_bottom = 91.0
+
+[node name="Settings" type="Button" parent="VBoxContainer4"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-text = "Settings"
+size_flags_vertical = 3
+theme = ExtResource("2_mae5d")
 
-[node name="ExitGame" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -184.0
+offset_top = 106.0
+offset_right = 197.0
+offset_bottom = 209.0
+
+[node name="ExitGame" type="Button" parent="VBoxContainer3"]
 custom_minimum_size = Vector2(0, 64)
 layout_mode = 2
-text = "Quit Game"
+size_flags_vertical = 3
+theme = ExtResource("2_mae5d")
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="VBoxContainer2"]
+position = Vector2(-12, -8)
+texture = ExtResource("2_ouk20")
 
 [connection signal="pressed" from="VBoxContainer/NewGame" to="." method="_on_new_game_pressed"]
-[connection signal="pressed" from="VBoxContainer/Level Select" to="." method="_on_level_select_pressed"]
-[connection signal="pressed" from="VBoxContainer/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="VBoxContainer/ExitGame" to="." method="_on_exit_game_pressed"]
+[connection signal="pressed" from="VBoxContainer5/Level Select" to="." method="_on_level_select_pressed"]
+[connection signal="pressed" from="VBoxContainer4/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="VBoxContainer3/ExitGame" to="." method="_on_exit_game_pressed"]

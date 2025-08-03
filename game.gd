@@ -17,10 +17,11 @@ var pause_vol = 1.0
 var pause_pitch = 1.0
 
 func _ready():
+	Global.ghost_num = 0
 	SignalBus.player_looped.connect(_on_player_looped)
 	SignalBus.level_completed.connect(_on_level_completed)
-	var ghost_init = ghost_scene.instantiate()
 	
+	var ghost_init = ghost_scene.instantiate()
 	ghost_init.is_static = true
 	ghost_init.movement_data = {0: {
 		"position_x": player.position.x + (loop.br_x*64 - loop.bl_x*64),
@@ -37,6 +38,8 @@ func _process(delta: float) -> void:
 		Global.load_cur()
 	if Input.is_action_just_pressed("Pause"):
 		pause()
+	if Input.is_action_just_pressed("Mute"):
+		Global.music_volume = 0.0
 	
 
 func _on_player_looped(movement_data):

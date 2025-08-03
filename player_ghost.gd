@@ -2,19 +2,27 @@ extends CharacterBody2D
 
 signal button_active(channel_sent)
 
+
 var movement_data : Dictionary = Dictionary()
 var count = -1
 var is_static: bool = false
 var overlaps
 var channel_to_emit: int = 0
+var colours = [Color.BLUE,Color.BLUE, Color.RED,Color.RED, Color.GREEN,Color.GREEN, Color.ORANGE,Color.ORANGE, Color.YELLOW,Color.YELLOW, Color.WHITE,Color.WHITE, Color.PURPLE,Color.PURPLE,]
+var colour
 
 @onready var loop = get_node("../Level/Looping_Componenet")
 @onready var loop_position_end: Vector2 = Vector2(loop.br_x*64, loop.br_y*64)
 @onready var player = get_node("../Player")
 @onready var ghost_sprite: AnimatedSprite2D = %GhostSprite
+@onready var game = $".."
 
 func _ready() -> void:
 	SignalBus.player_looped.connect(_on_player_looped)
+	ghost_sprite.modulate = colours[Global.ghost_num]
+	ghost_sprite.modulate.a = 0.4
+	colour = ghost_sprite.modulate
+	Global.ghost_num += 1
 	
 	if movement_data.has(0):
 		var frame_data = movement_data[0]
@@ -45,12 +53,12 @@ func _on_player_looped(movement_data):
 	
 func update_collision_layers():
 	if ghost_sprite.animation == "block":
-		ghost_sprite.modulate = Color(1,1,1,1)
+		ghost_sprite.modulate.a = 1.0
 		$Area2D.set_collision_layer_value(2, false)
 		set_collision_layer_value(1, true)
 		set_collision_mask_value(1, true)
 	else:
-		ghost_sprite.modulate = Color(0.0, 0.341, 0.569, 0.588)
+		ghost_sprite.modulate = colour
 		$Area2D.set_collision_layer_value(2, true)
 		set_collision_layer_value(1, false)
 		set_collision_mask_value(1, false)

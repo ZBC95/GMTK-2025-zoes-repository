@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpcf72axmb42p"]
+
+[ext_resource type="Texture2D" uid="uid://bl8k7ic07hvf" path="res://assets/light64.png" id="1_oxkey"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nkion"]
+atlas = ExtResource("1_oxkey")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqm1k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nkion")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="dum_light" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_mqm1k")

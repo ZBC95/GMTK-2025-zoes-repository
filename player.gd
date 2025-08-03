@@ -78,8 +78,12 @@ func _physics_process(delta: float) -> void:
 					current_state = PlayerState.SKID
 					player_sprite.frame = 0  # Reset frame when entering skid state
 				
-				velocity.x = direction * SPEED
-				if direction == -1:
+				if position.x - 32 > loop_position_start.x or direction == 1:
+					velocity.x = direction * SPEED
+				else:
+					velocity.x = 0.0
+				
+				if direction < 0:
 					player_sprite.flip_h = true
 				else:
 					player_sprite.flip_h = false
