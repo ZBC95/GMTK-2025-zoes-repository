@@ -5,7 +5,10 @@
 [ext_resource type="Script" uid="uid://cm7gfldk3tyxu" path="res://tile_map_layer.gd" id="3_dd556"]
 [ext_resource type="PackedScene" uid="uid://d11r447pm7biw" path="res://looping_componenet.tscn" id="4_4eq57"]
 [ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="5_3u274"]
-[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://assets/star.tscn" id="6_li5hd"]
+[ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="6_i7y0t"]
+[ext_resource type="PackedScene" path="res://Level_Making/star.tscn" id="6_li5hd"]
+[ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="7_dd556"]
+[ext_resource type="PackedScene" uid="uid://cnsp3yarh2mii" path="res://Level_Making/platform.tscn" id="9_4eq57"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_ej4yx")
