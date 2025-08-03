@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://pec1kaegnjpg"]
+[gd_scene load_steps=37 format=3 uid="uid://pec1kaegnjpg"]
 
 [ext_resource type="Script" uid="uid://ct8sp3jamrj4x" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://co5pwtkndgg0m" path="res://assets/jump256.png" id="2_2hs0m"]
@@ -81,6 +81,10 @@ region = Rect2(0, 0, 256, 256)
 [sub_resource type="AtlasTexture" id="AtlasTexture_606se"]
 atlas = ExtResource("2_2hs0m")
 region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5t3lx"]
+atlas = ExtResource("2_2hs0m")
+region = Rect2(512, 0, 256, 256)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_op7ga"]
 atlas = ExtResource("2_2hs0m")
@@ -231,8 +235,11 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_bwjto")
 }, {
-"duration": 10.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_606se")
+}, {
+"duration": 10.0,
+"texture": SubResource("AtlasTexture_5t3lx")
 }],
 "loop": false,
 "name": &"jump_up",
@@ -289,9 +296,8 @@ unique_name_in_owner = true
 position = Vector2(0, -23)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_dw050")
-animation = &"block"
+animation = &"jump_up"
 autoplay = "idle"
-frame_progress = 0.130717
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 4
