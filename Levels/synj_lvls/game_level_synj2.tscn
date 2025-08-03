@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dvmcrodp25v3h" path="res://Levels/synj_lvls/level_synj2.tscn" id="3_nuaju"]
 [ext_resource type="PackedScene" uid="uid://pec1kaegnjpg" path="res://Level_Making/player.tscn" id="4_iiyuf"]
 [ext_resource type="AudioStream" uid="uid://clxicred0arbw" path="res://assets/Proffesor McHoops Evil Loops.ogg" id="5_fs84a"]
-[ext_resource type="PackedScene" uid="uid://gw5h24hl0p46" path="res://player_ui.tscn" id="7_qg1sx"]
+[ext_resource type="PackedScene" path="res://player_ui.tscn" id="7_qg1sx"]
 [ext_resource type="PackedScene" uid="uid://cmpniq1j3ghst" path="res://pause_component.tscn" id="8_46op4"]
 [ext_resource type="AudioStream" uid="uid://d10krbieamqy5" path="res://assets/sfx/pause.wav" id="9_rkor3"]
 [ext_resource type="AudioStream" uid="uid://ub220pwldlci" path="res://assets/sfx/block.wav" id="10_7f83b"]
@@ -20,7 +20,7 @@ ghost_scene = ExtResource("2_xj662")
 [node name="Camera2D" parent="." instance=ExtResource("3_16l02")]
 
 [node name="Player" parent="." instance=ExtResource("4_iiyuf")]
-position = Vector2(186, 473)
+position = Vector2(398, 518)
 
 [node name="MusicPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_fs84a")
