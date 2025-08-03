@@ -5,6 +5,8 @@ var levels = [
 	"res://Levels/game_level_dev_02.tscn",
 	"res://Levels/game_level_tutorial_03.tscn",
 	"res://Levels/game_level_tutorial_04.tscn",
+	"res://Levels/game_level_superfreak1.tscn",
+	"res://Levels/synj_lvls/game_level_synj1.tscn",
 	"res://Levels/game_level_med1.tscn",
 	"res://Levels/game_level_hard1.tscn",
 ]
