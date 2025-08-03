@@ -5,14 +5,28 @@ extends Control
 @onready var settings = get_node("../settings")
 
 func _ready() -> void:
-	var num_of_levels = Global.levels.size()
+	var level_count = Global.levels.size()
+	var label_count = Global.levels.size()
+	var count = 0
 	for x in get_children():
 		for y in x.get_children():
 			for z in y.get_children():
-				if num_of_levels > 0:
-					num_of_levels -= 1
-				else:
-					z.visible = false
+				if z.name.left(5) == "Level":
+					if level_count > 0:
+						level_count -= 1
+					else:
+						z.visible = false
+				elif z.name.left(5) == "Label":
+					if label_count > 0:
+						if z.name.left(5) == "Label":
+							if Global.level_score.get(count) == 1:
+								z.text = ":)"
+							elif Global.level_score.get(count) == 2:
+								z.text = ":D"
+							count += 1
+						label_count -= 1
+					else:
+						z.visible = false
 
 func _on_back_pressed() -> void:
 	if get_node("..").name == "main_menu":

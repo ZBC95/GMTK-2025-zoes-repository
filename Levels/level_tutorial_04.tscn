@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://dbv118iqap4k"]
+[gd_scene load_steps=13 format=4 uid="uid://dbv118iqap4k"]
 
 [ext_resource type="Texture2D" uid="uid://b0uginph1g57o" path="res://tilesheet64.png" id="1_bjyyy"]
 [ext_resource type="Texture2D" uid="uid://cibr68m4d0qc5" path="res://assets/tileset2.png" id="2_ykv3k"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="6_x4hc2"]
 [ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="7_58rt0"]
 [ext_resource type="PackedScene" uid="uid://dxu8mra5ua1v3" path="res://Level_Making/light.tscn" id="8_tpwq0"]
+[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://Level_Making/star.tscn" id="9_ykv3k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
 texture = ExtResource("1_bjyyy")
@@ -472,3 +473,6 @@ channel = 2
 [node name="Light4" parent="." instance=ExtResource("8_tpwq0")]
 position = Vector2(1057, 288)
 channel = 2
+
+[node name="star" parent="." instance=ExtResource("9_ykv3k")]
+position = Vector2(799, 171)
