@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://p4urqew4lqu2" path="res://Level_Making/exit_pipe.tscn" id="5_x52p7"]
 [ext_resource type="PackedScene" uid="uid://dxu8mra5ua1v3" path="res://Level_Making/light.tscn" id="8_5jxbf"]
 [ext_resource type="PackedScene" uid="uid://c8taoh511l4oa" path="res://Level_Making/button.tscn" id="8_f3skr"]
+[ext_resource type="PackedScene" uid="uid://cmv8qyifxon78" path="res://assets/star.tscn" id="9_c4ykq"]
 [ext_resource type="PackedScene" uid="uid://b3du30tia0mtw" path="res://Level_Making/door.tscn" id="9_tbukn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6no7u"]
@@ -530,3 +531,6 @@ channel = 3
 [node name="Light6" parent="." instance=ExtResource("8_5jxbf")]
 position = Vector2(192, 288)
 channel = 3
+
+[node name="star" parent="." instance=ExtResource("9_c4ykq")]
+position = Vector2(900, -258)

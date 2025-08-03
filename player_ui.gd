@@ -10,7 +10,7 @@ var died = false
 var speech_tutorial: Array = [
 	"res://assets/speech_tutorial/professor_mcloop_speech3.png",
 	"res://assets/speech_tutorial/professor_mcloop_speech1.png",
-	"res://assets/speech_tutorial/professor_mcloop_speech5.png",
+	"res://assets/speech_tutorial/professor_mcloop_speech_fat_update.png",
 	"res://assets/speech_tutorial/professor_mcloop_speech.png"
 ]
 var speech_joke: Array = [
