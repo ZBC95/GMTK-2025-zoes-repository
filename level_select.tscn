@@ -309,4 +309,5 @@ text = ":(     =     Not Won
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_03" to="." method="_on_level_03_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer/Level_04" to="." method="_on_level_04_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_05" to="." method="_on_level_05_pressed"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer2/Level_06" to="." method="_on_level_06_pressed"]
 [connection signal="pressed" from="VBoxContainer/HBoxContainer9/Back" to="." method="_on_back_pressed"]

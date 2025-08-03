@@ -44,6 +44,7 @@ func _ready() -> void:
 			else:
 				Global.speech_joke_num = 0
 				$Marker2D/speech.texture = load(speech_joke[Global.speech_joke_num])
+			Global.speech_joke_num += 1
 
 func _process(delta: float) -> void:
 	

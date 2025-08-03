@@ -60,3 +60,8 @@ func _on_level_04_pressed() -> void:
 func _on_level_05_pressed() -> void:
 	Global.cur_level = 4
 	Global.load_cur()
+
+
+func _on_level_06_pressed() -> void:
+	Global.cur_level = 5
+	Global.load_cur()

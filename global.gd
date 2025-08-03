@@ -5,6 +5,7 @@ var levels = [
 	"res://Levels/game_level_dev_02.tscn",
 	"res://Levels/game_level_tutorial_03.tscn",
 	"res://Levels/game_level_tutorial_04.tscn",
+	"res://Levels/game_level_med1.tscn",
 	"res://Levels/game_level_hard1.tscn",
 ]
 var music_volume = 1.0
