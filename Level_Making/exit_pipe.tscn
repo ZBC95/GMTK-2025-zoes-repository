@@ -1,8 +1,7 @@
-[gd_scene load_steps=12 format=3 uid="uid://p4urqew4lqu2"]
+[gd_scene load_steps=11 format=3 uid="uid://p4urqew4lqu2"]
 
 [ext_resource type="Script" uid="uid://bacrdjkslmv3n" path="res://exit_pipe.gd" id="1_1yesm"]
 [ext_resource type="Texture2D" uid="uid://tur4exeoqna0" path="res://assets/pipe_sheet64.png" id="2_oqq8d"]
-[ext_resource type="AudioStream" uid="uid://ub220pwldlci" path="res://assets/sfx/block.wav" id="3_oqq8d"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o3mtp"]
 atlas = ExtResource("2_oqq8d")
@@ -71,11 +70,6 @@ animation = &"suck"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_eig6q")
-
-[node name="NiceSound" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("3_oqq8d")
-bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="animation_finished" from="ExitPipeSprite" to="." method="_on_exit_pipe_sprite_animation_finished"]

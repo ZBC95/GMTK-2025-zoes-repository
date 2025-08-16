@@ -11,7 +11,6 @@ func _on_body_entered(body: Node2D) -> void:
 		if body.has_method("die"):
 			body.queue_free()
 		exit_pipe_sprite.play("suck")
-		%NiceSound.play()
 
 func _on_exit_pipe_sprite_animation_finished() -> void:
 	SignalBus.level_completed.emit()
