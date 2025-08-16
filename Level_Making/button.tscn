@@ -44,7 +44,7 @@ script = ExtResource("1_r04n3")
 
 [node name="PressedArea" type="Area2D" parent="."]
 collision_layer = 2
-collision_mask = 0
+collision_mask = 2
 
 [node name="Area" type="CollisionShape2D" parent="PressedArea"]
 scale = Vector2(6.4, 2)
@@ -74,3 +74,6 @@ scale = Vector2(2, 1)
 sprite_frames = SubResource("SpriteFrames_bujx2")
 animation = &"off"
 autoplay = "off"
+
+[connection signal="area_entered" from="PressedArea" to="." method="_on_pressed_area_area_entered"]
+[connection signal="area_exited" from="PressedArea" to="." method="_on_pressed_area_area_exited"]

@@ -1,7 +1,5 @@
 extends Node2D
 
-signal ghost_spawned(sent_ghost)
-
 @export var ghost_scene : PackedScene
 
 @onready var player = get_node("Player")
@@ -60,7 +58,6 @@ func _on_player_looped(movement_data):
 	#print(ghost.movement_data)
 	#print(ghost2.movement_data)
 	add_child(ghost)
-	ghost_spawned.emit(ghost)
 	add_child(ghost2)
 
 func _on_level_completed():

@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://ca12dya30fsyl" path="res://assets/coinsheet.png" id="2_40vq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d7oe7"]
+size = Vector2(26.3566, 26.0465)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_71ga8"]
 atlas = ExtResource("2_40vq7")
@@ -42,13 +43,16 @@ animations = [{
 }]
 
 [node name="star" type="Area2D"]
-collision_layer = 0
-collision_mask = 4
+collision_layer = 8
+collision_mask = 8
 script = ExtResource("1_7d2ek")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 2)
 scale = Vector2(3.225, 3.225)
 shape = SubResource("RectangleShape2D_d7oe7")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l7mpb")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
