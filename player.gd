@@ -77,12 +77,14 @@ func _physics_process(delta: float) -> void:
 		# Handle blocking
 		if Input.is_action_pressed("Down") and is_on_floor():
 			$Area2D.set_collision_layer_value(2, true)
+			floor_snap_length = 10.0
 			#print("collision 2 on")
 			is_blocking = true
 			current_state = PlayerState.BLOCK
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		elif Input.is_action_just_released("Down"):
 			$Area2D.set_collision_layer_value(2, false)
+			floor_snap_length = 0.1
 			#print("collision 2 off")
 			is_blocking = false
 			current_state = PlayerState.IDLE

@@ -4,12 +4,16 @@
 [ext_resource type="Texture2D" uid="uid://8apoyh8mraef" path="res://assets/button64.png" id="2_f32dm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vvm8"]
+size = Vector2(20, 22.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04n3"]
+size = Vector2(15.7813, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4tde"]
+size = Vector2(45.4269, 27.9186)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vxja4"]
+size = Vector2(46.5429, 28.4186)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mu4ha"]
 atlas = ExtResource("2_f32dm")
@@ -47,10 +51,12 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Area" type="CollisionShape2D" parent="PressedArea"]
+position = Vector2(0, -2.5)
 scale = Vector2(6.4, 2)
 shape = SubResource("RectangleShape2D_0vvm8")
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, -6)
 scale = Vector2(6.4, 1)
 shape = SubResource("RectangleShape2D_r04n3")
 
@@ -58,12 +64,12 @@ shape = SubResource("RectangleShape2D_r04n3")
 scale = Vector2(20, 20)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-67, 3)
+position = Vector2(-64, 0.999998)
 rotation = -0.523599
 shape = SubResource("RectangleShape2D_n4tde")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(67, 3)
+position = Vector2(63.0245, 1.85945)
 rotation = 0.523599
 shape = SubResource("RectangleShape2D_vxja4")
 
