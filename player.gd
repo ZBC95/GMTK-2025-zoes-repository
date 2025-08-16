@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-signal button_active(channel_sent)
 signal dies()
 
 @export var SPEED = 600.0
@@ -41,7 +40,10 @@ var is_want_up = false
 @onready var loop_sound: AudioStreamPlayer = %LoopSound
 @onready var nice_sound: AudioStreamPlayer = %NiceSound
 
+
 func _physics_process(delta: float) -> void:
+	
+		
 	
 	if Input.is_action_pressed("Jump") and velocity.y < 0 and is_want_up:
 		gravity  = 2000
@@ -53,10 +55,6 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_released("Jump"):
 		is_want_up = false
 	
-	
-	
-	
-	check_overlaps()
 	
 	record_movement()
 	 # If not dead
@@ -77,11 +75,15 @@ func _physics_process(delta: float) -> void:
 			is_want_up = true
 
 		# Handle blocking
-		if Input.is_action_pressed("Down") and (is_on_floor() or overlaps.size() != 0):
+		if Input.is_action_pressed("Down") and is_on_floor():
+			$Area2D.set_collision_layer_value(2, true)
+			#print("collision 2 on")
 			is_blocking = true
 			current_state = PlayerState.BLOCK
 			velocity.x = move_toward(velocity.x, 0, SPEED)
 		elif Input.is_action_just_released("Down"):
+			$Area2D.set_collision_layer_value(2, false)
+			#print("collision 2 off")
 			is_blocking = false
 			current_state = PlayerState.IDLE
 		
@@ -183,19 +185,14 @@ func record_movement():
 		"flip_h": player_sprite.flip_h
 	}
 
-func check_overlaps():
-	overlaps = get_node("Area2D").get_overlapping_areas()
-	if overlaps.size() != 0:
-		#print("")
-		for ol in overlaps:
-			if ol.get_parent().name.left(6) == "Button" and player_sprite.animation == "block":
-				button_active.emit(ol.get_parent().channel)
-			elif ol.get_parent().name.left(6) == "@Chara" or ol.get_parent().name.left(4) == "Door":
-				die()
-
 func die():
 	dies.emit()
 	death_sound.play()
 	current_state = PlayerState.DEAD
 	await get_tree().create_timer(0.875).timeout
 	queue_free()
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	$Hitbox.set_collision_mask_value(3, false)
+	die()
