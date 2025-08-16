@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://8apoyh8mraef" path="res://assets/button64.png" id="2_f32dm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0vvm8"]
-size = Vector2(20, 22.5)
+size = Vector2(20, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_r04n3"]
 size = Vector2(15.7813, 32)
@@ -51,7 +51,7 @@ collision_layer = 2
 collision_mask = 2
 
 [node name="Area" type="CollisionShape2D" parent="PressedArea"]
-position = Vector2(0, -2.5)
+position = Vector2(0, -7)
 scale = Vector2(6.4, 2)
 shape = SubResource("RectangleShape2D_0vvm8")
 
